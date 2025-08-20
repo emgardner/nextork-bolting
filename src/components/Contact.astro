@@ -1,0 +1,160 @@
+---
+// Contact section component
+import {
+  Mail,
+  MapPin,
+  ExternalLink,
+  Clock,
+  CheckCircle,
+} from 'lucide-react';
+---
+
+<section
+  class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden"
+>
+  <!-- Background decoration -->
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-72 h-72 bg-blue-400/10 rounded-full -translate-x-1/2 -translate-y-1/2"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/10 rounded-full translate-x-1/2 translate-y-1/2"
+  >
+  </div>
+
+  <div class="max-w-6xl mx-auto px-8 relative z-10">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6 shadow-lg"
+      >
+        <Mail className="w-8 h-8 text-white" />
+      </div>
+      <h2
+        class="text-5xl md:text-4xl sm:text-3xl font-bold mb-6 tracking-tight bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent"
+      >
+        Get In Touch
+      </h2>
+      <p
+        class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+      >
+        Ready to start your next project? We'd love to hear from you
+        and discuss how we can help bring your vision to life.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <!-- Address Card -->
+      <div class="group h-full">
+        <div
+          class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
+        >
+          <div class="flex items-center mb-6">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg"
+            >
+              <MapPin className="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">
+              Visit Our Office
+            </h3>
+          </div>
+          <div class="space-y-3 text-gray-700 text-lg flex-grow">
+            <div class="flex items-start">
+              <div
+                class="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-3 mr-3"
+              >
+              </div>
+              <p>50 Intervale Rd</p>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-3 mr-3"
+              >
+              </div>
+              <p>Suite 12</p>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-3 mr-3"
+              >
+              </div>
+              <p>Boonton, NJ 07005</p>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-gray-200 mt-auto">
+            <a
+              href="https://maps.google.com/?q=50+Intervale+Rd+Boonton+NJ+07005"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              View on Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Card -->
+      <div class="group h-full">
+        <div
+          class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
+        >
+          <div class="flex items-center mb-6">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg"
+            >
+              <Mail className="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">
+              Send Us a Message
+            </h3>
+          </div>
+          <div class="space-y-4 flex-grow">
+            <p class="text-gray-600 text-lg">
+              Have a question or want to discuss a project? We're here
+              to help!
+            </p>
+            <a
+              href="mailto:info@nextork.net"
+              class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 group-hover:scale-105 mb-4"
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              info@nextork.net
+            </a>
+          </div>
+          <div class="mt-8 pt-6 border-t border-gray-200 mt-auto">
+            <p class="text-sm text-gray-500">
+              We typically respond within 24 hours
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional info section -->
+    <div class="mt-16 text-center">
+      <div
+        class="inline-flex items-center space-x-8 bg-white/60 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-lg border border-white/20"
+      >
+        <div class="flex items-center space-x-2">
+          <CheckCircle className="w-5 h-5 text-green-500" />
+          <span class="text-gray-700 font-medium"
+            >Available for new projects</span
+          >
+        </div>
+        <div class="w-px h-6 bg-gray-300"></div>
+        <div class="flex items-center space-x-2">
+          <Clock className="w-5 h-5 text-gray-600" />
+          <span class="text-gray-700 font-medium"
+            >Quick response time</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

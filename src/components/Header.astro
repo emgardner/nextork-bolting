@@ -1,0 +1,170 @@
+---
+import logoImage from '../assets/logo_straight.png';
+---
+
+<!-- Sticky Header -->
+<header
+  id="sticky-header"
+  class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50 transform transition-transform duration-300 ease-out"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <img
+          src={logoImage.src}
+          alt="Nextork Bolting Logo"
+          class="h-10 w-auto"
+        />
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a
+          href="#"
+          class="text-gray-600 hover:text-gray-900 transition-colors"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="text-gray-600 hover:text-gray-900 transition-colors"
+          >About</a
+        >
+        <a
+          href="#"
+          class="text-gray-600 hover:text-gray-900 transition-colors"
+          >Services</a
+        >
+        <a
+          href="#"
+          class="text-gray-600 hover:text-gray-900 transition-colors"
+          >Contact</a
+        >
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+        aria-label="Toggle mobile menu"
+      >
+        <svg
+          id="menu-icon"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          id="close-icon"
+          class="w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    <div
+      id="mobile-menu"
+      class="md:hidden hidden bg-white border-t border-gray-200"
+    >
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a
+          href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+          >About</a
+        >
+        <a
+          href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+          >Services</a
+        >
+        <a
+          href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+          >Contact</a
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  let scrollTimeout: ReturnType<typeof setTimeout> | undefined;
+  const header = document.getElementById('sticky-header');
+  let lastScrollTop = 0;
+
+  if (header) {
+    // Initially show the header
+    header.style.transform = 'translateY(0)';
+
+    window.addEventListener('scroll', () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      // Show header when scrolling
+      header.style.transform = 'translateY(0)';
+
+      // Clear existing timeout
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      // Only hide header if user has scrolled down and then stops
+      if (scrollTop > 50) {
+        // Set timeout to hide header after scrolling stops
+        scrollTimeout = setTimeout(() => {
+          header.style.transform = 'translateY(-100%)';
+        }, 1000); // 1 second delay
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  }
+
+  // Mobile menu functionality
+  const mobileMenuButton = document.getElementById(
+    'mobile-menu-button'
+  );
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+    mobileMenuButton.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('hidden');
+
+      if (isOpen) {
+        // Open menu
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        // Close menu
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  }
+</script>
