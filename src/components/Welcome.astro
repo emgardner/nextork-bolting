@@ -4,20 +4,40 @@ import Industries from './Industries.astro';
 import AboutUs from './AboutUs.astro';
 import Contact from './Contact.astro';
 import ToolSection from './ToolSection.astro';
+import Accessories from './Accessories.tsx';
+import SectionSeparator from './SectionSeparator.astro';
 ---
 
 <div class="min-h-screen flex flex-col">
   <!-- Hero Section -->
   <Hero />
 
-  <!-- Industries Section -->
-  <Industries />
+  <!-- Section Divider -->
+  <SectionSeparator variant="blue" />
 
   <!-- Tools Section -->
   <ToolSection />
 
+  <!-- Section Divider -->
+  <SectionSeparator variant="slate" />
+
+  <!-- Accessories Section -->
+  <Accessories client:load />
+
+  <!-- Section Divider -->
+  <SectionSeparator variant="cyan" />
+
+  <!-- Industries Section -->
+  <Industries />
+
+  <!-- Section Divider -->
+  <SectionSeparator variant="blue" />
+
   <!-- About Us Section -->
   <AboutUs />
+
+  <!-- Section Divider -->
+  <SectionSeparator variant="blue" />
 
   <Contact />
 </div>

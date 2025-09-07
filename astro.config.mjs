@@ -11,14 +11,17 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://nextork-bolting.com",
+  site: 'https://nextork-bolting.com',
   integrations: [sitemap(), react()],
 
   vite: {
     plugins: [tailwindcss()],
     resolve: {
-      alias: import.meta.env.PROD && {
-        "react-dom/server": "react-dom/server.edge",
+      alias: {
+        '@': '/src',
+        ...(import.meta.env.PROD && {
+          'react-dom/server': 'react-dom/server.edge',
+        }),
       },
     },
   },
@@ -27,5 +30,5 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
     },
-  })
+  }),
 });

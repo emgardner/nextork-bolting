@@ -1,11 +1,11 @@
 ---
-import MADE_IN_USA from '../assets/MADE_IN_USA.jpg';
+import MADE_IN_USA from '@/assets/MADE_IN_USA.jpg';
 import ToolGrid from './ToolGrid.tsx';
-import NT200B_SIDE from '../assets/tools/NT200B_SIDE.jpg';
-import NT500B_SIDE from '../assets/tools/NT500B_SIDE.jpg';
-import NT800B_SIDE from '../assets/tools/NT800B_SIDE.jpg';
-import NT1300B_SIDE from '../assets/tools/NT1300B_SIDE.jpg';
-import NT2600B_SIDE from '../assets/tools/NT2600B_SIDE.jpg';
+import NT200B_SIDE from '@/assets/tools/NT200B_SIDE.webp';
+import NT500B_SIDE from '@/assets/tools/NT500B_SIDE.webp';
+import NT800B_SIDE from '@/assets/tools/NT800B_SIDE.webp';
+import NT1300B_SIDE from '@/assets/tools/NT1300B_SIDE.webp';
+import NT2600B_SIDE from '@/assets/tools/NT2600B_SIDE.webp';
 
 // Sample tool data
 const tools = [
@@ -72,7 +72,10 @@ const tools = [
 ];
 ---
 
-<section id="tools" class="py-16 bg-background">
+<section
+  id="tools"
+  class="py-16 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800"
+>
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-12 text-foreground">
       Our Tools

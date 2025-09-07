@@ -1,5 +1,5 @@
 ---
-import logoImage from '../assets/logo_straight.png';
+import logoImage from '@/assets/logo_straight.png';
 ---
 
 <!-- Sticky Header -->
@@ -20,22 +20,22 @@ import logoImage from '../assets/logo_straight.png';
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-8">
         <a
-          href="#"
+          href="#hero"
           class="text-gray-600 hover:text-gray-900 transition-colors"
           >Home</a
         >
         <a
-          href="#"
+          href="#about"
           class="text-gray-600 hover:text-gray-900 transition-colors"
           >About</a
         >
         <a
-          href="#"
+          href="#tools"
           class="text-gray-600 hover:text-gray-900 transition-colors"
-          >Services</a
+          >Tools</a
         >
         <a
-          href="#"
+          href="#contact"
           class="text-gray-600 hover:text-gray-900 transition-colors"
           >Contact</a
         >
@@ -85,22 +85,22 @@ import logoImage from '../assets/logo_straight.png';
     >
       <div class="px-2 pt-2 pb-3 space-y-1">
         <a
-          href="#"
+          href="#hero"
           class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
           >Home</a
         >
         <a
-          href="#"
+          href="#about"
           class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
           >About</a
         >
         <a
-          href="#"
+          href="#tools"
           class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
-          >Services</a
+          >Tools</a
         >
         <a
-          href="#"
+          href="#contact"
           class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
           >Contact</a
         >
@@ -165,6 +165,16 @@ import logoImage from '../assets/logo_straight.png';
         menuIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
       }
+    });
+
+    // Close mobile menu when clicking on navigation links
+    const mobileNavLinks = mobileMenu.querySelectorAll('a');
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
     });
   }
 </script>

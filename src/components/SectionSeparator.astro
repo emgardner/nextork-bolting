@@ -1,0 +1,41 @@
+---
+// Reusable section separator component
+export interface Props {
+  variant?: 'blue' | 'cyan' | 'slate' | 'gray';
+  className?: string;
+}
+
+const { variant = 'blue', className = '' } = Astro.props;
+
+// Define color variants
+const variants = {
+  blue: {
+    line: 'from-transparent via-blue-200 to-transparent',
+    dot: 'bg-blue-300',
+  },
+  cyan: {
+    line: 'from-transparent via-cyan-200 to-transparent',
+    dot: 'bg-cyan-300',
+  },
+  slate: {
+    line: 'from-transparent via-slate-200 to-transparent',
+    dot: 'bg-slate-300',
+  },
+  gray: {
+    line: 'from-transparent via-gray-200 to-transparent',
+    dot: 'bg-gray-300',
+  },
+};
+
+const selectedVariant = variants[variant];
+---
+
+<div class={`relative py-4 ${className}`}>
+  <div class={`h-1 bg-gradient-to-r ${selectedVariant.line}`}></div>
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div
+      class={`w-3 h-3 ${selectedVariant.dot} rounded-full shadow-sm`}
+    >
+    </div>
+  </div>
+</div>

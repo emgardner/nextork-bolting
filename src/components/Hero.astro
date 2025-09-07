@@ -1,8 +1,31 @@
 ---
-import toolImage from '../assets/tool.jpg';
+import NT1300B_HMI from '@/assets/tools/NT1300B_HMI.webp';
+import NT1300B_SIDE from '@/assets/tools/NT1300B_SIDE.webp';
+import NT200B_HMI from '@/assets/tools/NT200B_HMI.webp';
+import NT200B_SIDE from '@/assets/tools/NT200B_SIDE.webp';
+import NT2600B_HMI from '@/assets/tools/NT2600B_HMI.webp';
+import NT2600B_SIDE from '@/assets/tools/NT2600B_SIDE.webp';
+import NT500B_HMI from '@/assets/tools/NT500B_HMI.webp';
+import NT500B_SIDE from '@/assets/tools/NT500B_SIDE.webp';
+import NT800B_HMI from '@/assets/tools/NT800B_HMI.webp';
+import NT800B_SIDE from '@/assets/tools/NT800B_SIDE.webp';
+
+const toolImages = [
+  { src: NT1300B_HMI.src, alt: 'NexTORK NT1300B HMI View' },
+  { src: NT1300B_SIDE.src, alt: 'NexTORK NT1300B Side View' },
+  { src: NT200B_HMI.src, alt: 'NexTORK NT200B HMI View' },
+  { src: NT200B_SIDE.src, alt: 'NexTORK NT200B Side View' },
+  { src: NT2600B_HMI.src, alt: 'NexTORK NT2600B HMI View' },
+  { src: NT2600B_SIDE.src, alt: 'NexTORK NT2600B Side View' },
+  { src: NT500B_HMI.src, alt: 'NexTORK NT500B HMI View' },
+  { src: NT500B_SIDE.src, alt: 'NexTORK NT500B Side View' },
+  { src: NT800B_HMI.src, alt: 'NexTORK NT800B HMI View' },
+  { src: NT800B_SIDE.src, alt: 'NexTORK NT800B Side View' },
+];
 ---
 
 <section
+  id="hero"
   class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-blue-50 to-slate-100"
 >
   <!-- Background Pattern -->
@@ -86,55 +109,78 @@ import toolImage from '../assets/tool.jpg';
         <!-- Image Content -->
         <div class="relative">
           <div class="relative z-10">
-            <img
-              src={toolImage.src}
-              alt="NexTORK High-Performance Torque Tool"
-              class="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-
-          <!-- Floating Elements -->
-          <div
-            class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full opacity-20 animate-pulse"
-          >
-          </div>
-          <div
-            class="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full opacity-20 animate-pulse"
-            style="animation-delay: 1s;"
-          >
-          </div>
-
-          <!-- Decorative Elements -->
-          <div
-            class="absolute top-1/2 -left-8 w-16 h-16 border-2 border-blue-400 rounded-full opacity-30 animate-spin"
-            style="animation-duration: 20s;"
-          >
-          </div>
-          <div
-            class="absolute bottom-1/4 -right-8 w-12 h-12 border-2 border-cyan-400 rounded-full opacity-30 animate-spin"
-            style="animation-duration: 15s; animation-direction: reverse;"
-          >
+            <div
+              id="hero-carousel"
+              class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden"
+            >
+              {
+                toolImages.map((image, index) => (
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    class={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
+                      index === 0 ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    data-index={index}
+                  />
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Scroll Indicator -->
-  <div
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-600 animate-bounce"
-  >
-    <svg
-      class="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
-  </div>
 </section>
+
+<script>
+  // Hero image carousel functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.getElementById('hero-carousel');
+    if (!carousel) {
+      console.error('Hero carousel element not found');
+      return;
+    }
+
+    const images = carousel.querySelectorAll('img');
+    if (images.length === 0) {
+      console.error('No images found in carousel');
+      return;
+    }
+
+    console.log(`Found ${images.length} images in carousel`);
+
+    let currentIndex = 0;
+    const totalImages = images.length;
+
+    function showImage(index: number) {
+      // Hide all images
+      images.forEach((img) => {
+        img.classList.remove('opacity-100');
+        img.classList.add('opacity-0');
+      });
+
+      // Show current image
+      images[index].classList.remove('opacity-0');
+      images[index].classList.add('opacity-100');
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % totalImages;
+      showImage(currentIndex);
+    }
+
+    // Start the carousel
+    let interval = setInterval(nextImage, 3000); // Change image every 3 seconds
+
+    // Pause carousel on hover
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(interval);
+    });
+
+    // Resume carousel when mouse leaves
+    carousel.addEventListener('mouseleave', () => {
+      interval = setInterval(nextImage, 3000);
+    });
+  });
+</script>
