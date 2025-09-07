@@ -1,27 +1,23 @@
 ---
-// Coming Soon page component
-import toolImage from '../assets/tool.jpg';
+import Hero from './Hero.astro';
+import Industries from './Industries.astro';
+import AboutUs from './AboutUs.astro';
 import Contact from './Contact.astro';
+import ToolSection from './ToolSection.astro';
 ---
 
 <div class="min-h-screen flex flex-col">
-  <div
-    class="flex-1 flex items-center justify-center font-sans relative"
-    style="min-height: min(100vh, 1080px);"
-  >
-    <div class="text-center text-gray-900 px-8">
-      <img
-        src={toolImage.src}
-        alt="Tool"
-        class="mx-auto mb-8 max-w-md w-full h-auto rounded-lgl"
-      />
-      <h1
-        class="text-6xl md:text-5xl sm:text-4xl font-bold mb-4 tracking-tight drop-shadow-lg"
-      >
-        Coming Soon
-      </h1>
-    </div>
-  </div>
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Industries Section -->
+  <Industries />
+
+  <!-- Tools Section -->
+  <ToolSection />
+
+  <!-- About Us Section -->
+  <AboutUs />
 
   <Contact />
 </div>

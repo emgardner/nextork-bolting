@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+  imageSrc: string;
+  imageAlt: string;
+  features: string[];
+}
+
+const { title, imageSrc, imageAlt, features } = Astro.props;
+---
+
+<div
+  class="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+>
+  <!-- Centered Title -->
+  <h3
+    class="text-xl font-semibold text-card-foreground text-center mb-4"
+  >
+    {title}
+  </h3>
+
+  <!-- Image -->
+  <div class="flex justify-center mb-4">
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      class="w-full h-72 object-contain rounded-md border border-border"
+    />
+  </div>
+
+  <!-- Bulleted List -->
+  <ul class="space-y-2">
+    {
+      features.map((feature) => (
+        <li class="flex items-start">
+          <span class="text-primary mr-2 mt-1">•</span>
+          <span class="text-card-foreground text-sm">{feature}</span>
+        </li>
+      ))
+    }
+  </ul>
+</div>

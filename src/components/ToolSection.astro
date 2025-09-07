@@ -1,0 +1,172 @@
+---
+import MADE_IN_USA from '../assets/MADE_IN_USA.jpg';
+import ToolGrid from './ToolGrid.tsx';
+import NT200B_SIDE from '../assets/tools/NT200B_SIDE.jpg';
+import NT500B_SIDE from '../assets/tools/NT500B_SIDE.jpg';
+import NT800B_SIDE from '../assets/tools/NT800B_SIDE.jpg';
+import NT1300B_SIDE from '../assets/tools/NT1300B_SIDE.jpg';
+import NT2600B_SIDE from '../assets/tools/NT2600B_SIDE.jpg';
+
+// Sample tool data
+const tools = [
+  {
+    title: 'NT200B',
+    imageSrc: NT200B_SIDE.src,
+    imageAlt: 'NT200B',
+    features: [
+      '20 to 200 Ft-Lb Capacity',
+      '27 to 271 Nm Capacity',
+      '60.1 Max RPM',
+      '10.6 Lb Total Weight',
+      '4.8 Kg Total Weight',
+    ],
+  },
+  {
+    title: 'NT500B',
+    imageSrc: NT500B_SIDE.src,
+    imageAlt: 'NT500B',
+    features: [
+      '50 to 500 Ft-Lb Capacity',
+      '68 to 678 Nm Capacity',
+      '17.4 Max RPM',
+      '11.7 Lb Total Weight',
+      '5.3 Kg Total Weight',
+    ],
+  },
+  {
+    title: 'NT800B',
+    imageSrc: NT800B_SIDE.src,
+    imageAlt: 'NT800B',
+    features: [
+      '80 to 800 Ft-Lb Capacity',
+      '108 to 1085 Nm Capacity',
+      '12.2 Max RPM',
+      '13.4 Lb Total Weight',
+      '6.1 Kg Total Weight',
+    ],
+  },
+  {
+    title: 'NT1300B',
+    imageSrc: NT1300B_SIDE.src,
+    imageAlt: 'NT1300B',
+    features: [
+      '130 to 1,300 Ft-Lb Capacity',
+      '176 to 1,736 Nm Capacity',
+      '6.6 Max RPM',
+      '14.9 Lb Total Weight',
+      '6.8 Kg Total Weight',
+    ],
+  },
+  {
+    title: 'NT2600B',
+    imageSrc: NT2600B_SIDE.src,
+    imageAlt: 'NT2600B',
+    features: [
+      '260 to 2,600 Ft-Lb Capacity',
+      '353 to 3,525 Nm Capacity',
+      '3.0 Max RPM',
+      '19.9 Lb Total Weight',
+      '9.0 Kg Total Weight',
+    ],
+  },
+];
+---
+
+<section id="tools" class="py-16 bg-background">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-foreground">
+      Our Tools
+    </h2>
+
+    <!-- Tool Grid -->
+    <ToolGrid client:load tools={tools} />
+
+    <!-- Features List -->
+    <div
+      class="max-w-4xl mx-auto mb-12 mt-16 flex flex-col items-center"
+    >
+      <h3
+        class="text-2xl font-semibold text-center mb-8 text-foreground"
+      >
+        All of our tools come with
+      </h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground"
+              >Torque and turn-of-nut modes</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground">Remote control capable</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground"
+              >Better than 5% accuracy</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground"
+              >Durable all metal construction</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground"
+              >Uses Makita® 18V Li-ion batteries</span
+            >
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground"
+              >Brushless motor with advanced heat management</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground"
+              >Field replaceable square drive</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground"
+              >Modular design shares accessories with all other models</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground"
+              >Designed and manufactured in the USA</span
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-primary rounded-full"></div>
+            <span class="text-foreground">1 year warranty</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="italic text-muted-foreground w-full text-center mb-8">
+      All tool weight's include reaction arm, square drive and battery
+    </div>
+
+    <!-- Made in USA Image -->
+    <div class="flex justify-center">
+      <img
+        src={MADE_IN_USA.src}
+        alt="Made in USA"
+        class="max-w-xs w-full h-auto rounded-lg shadow-sm"
+      />
+    </div>
+  </div>
+</section>
