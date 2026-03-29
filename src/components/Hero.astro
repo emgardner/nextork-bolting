@@ -1,186 +1,82 @@
 ---
-import NT1300B_HMI from '@/assets/tools/NT1300B_HMI.webp';
-import NT1300B_SIDE from '@/assets/tools/NT1300B_SIDE.webp';
-import NT200B_HMI from '@/assets/tools/NT200B_HMI.webp';
-import NT200B_SIDE from '@/assets/tools/NT200B_SIDE.webp';
-import NT2600B_HMI from '@/assets/tools/NT2600B_HMI.webp';
-import NT2600B_SIDE from '@/assets/tools/NT2600B_SIDE.webp';
-import NT500B_HMI from '@/assets/tools/NT500B_HMI.webp';
-import NT500B_SIDE from '@/assets/tools/NT500B_SIDE.webp';
-import NT800B_HMI from '@/assets/tools/NT800B_HMI.webp';
-import NT800B_SIDE from '@/assets/tools/NT800B_SIDE.webp';
-
-const toolImages = [
-  { src: NT1300B_HMI.src, alt: 'NexTORK NT1300B HMI View' },
-  { src: NT1300B_SIDE.src, alt: 'NexTORK NT1300B Side View' },
-  { src: NT200B_HMI.src, alt: 'NexTORK NT200B HMI View' },
-  { src: NT200B_SIDE.src, alt: 'NexTORK NT200B Side View' },
-  { src: NT2600B_HMI.src, alt: 'NexTORK NT2600B HMI View' },
-  { src: NT2600B_SIDE.src, alt: 'NexTORK NT2600B Side View' },
-  { src: NT500B_HMI.src, alt: 'NexTORK NT500B HMI View' },
-  { src: NT500B_SIDE.src, alt: 'NexTORK NT500B Side View' },
-  { src: NT800B_HMI.src, alt: 'NexTORK NT800B HMI View' },
-  { src: NT800B_SIDE.src, alt: 'NexTORK NT800B Side View' },
-];
+import ToolSpinVideo from '@/assets/1300 Tool Spin LR.mp4';
+import VoltorkBrochure from '@/assets/brochure/Voltork_Brochure.pdf';
 ---
 
 <section
   id="hero"
-  class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-blue-50 to-slate-100"
+  class="relative isolate overflow-hidden bg-white text-slate-950"
 >
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-5">
-    <div
-      class="absolute inset-0"
-      style="background-image: radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px), radial-gradient(circle at 75% 75%, #1e40af 1px, transparent 1px); background-size: 80px 80px;"
-    >
-    </div>
-  </div>
-
-  <!-- Content Container -->
   <div
-    class="relative z-10 container mx-auto px-8 md:px-6 pt-16 pb-8 md:py-20"
+    class="relative z-10 mx-auto max-w-7xl px-6 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12 lg:py-28"
   >
-    <div class="max-w-6xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-        <!-- Text Content -->
-        <div class="text-gray-900 space-y-4 md:space-y-8">
-          <div class="space-y-4">
-            <h1
-              class="text-5xl lg:text-6xl font-bold leading-tight text-black"
-            >
-              NexTORK
-            </h1>
-            <div class="w-24 h-1 bg-black rounded-full"></div>
-          </div>
-
-          <div
-            class="space-y-6 text-lg lg:text-xl leading-relaxed text-gray-700"
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,0.96fr)_minmax(0,1.04fr)] lg:items-stretch lg:gap-10">
+      <div class="max-w-2xl space-y-8 lg:flex lg:flex-col lg:justify-center">
+        <div class="space-y-5">
+          <h1
+            class="max-w-[12ch] text-5xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-6xl xl:text-7xl"
           >
-            <p>
-              At <span class="font-semibold">NexTORK</span>, we
-              engineer and build high-performance torque tools with a
-              strong emphasis on innovation. By combining advanced
-              metallurgical and electronics technology with
-              user-friendly design, we deliver torque solutions that
-              professionals trust for accuracy, durability, and
-              efficiency.
-            </p>
+            Next Generation Bolting Solutions
+          </h1>
 
-            <p>
-              From the shop floor to the toughest field conditions, <span
-                class="font-semibold">NexTORK</span
-              > tools provide consistent precision for industries that
-              depend on heavy bolting solutions. We'd love the opportunity
-              to demonstrate how our innovation and reliability can enhance
-              your operations.
-            </p>
-          </div>
+          <p class="max-w-xl text-xl font-medium text-sky-800 sm:text-2xl">
+            Precision Electric Torque Tools
+          </p>
 
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <a
-              href="#tools"
-              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-            >
-              View Our Tools
-              <svg
-                class="ml-2 w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-            <a
-              href="#contact"
-              class="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-semibold rounded-lg transition-all duration-300"
-            >
-              Get In Touch
-            </a>
-          </div>
+          <p class="max-w-lg text-base leading-8 text-slate-600 sm:text-lg">
+            Engineered for precision, durability, performance.
+          </p>
         </div>
 
-        <!-- Image Content -->
-        <div class="relative">
-          <div class="relative z-10">
-            <div
-              id="hero-carousel"
-              class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden"
-            >
-              {
-                toolImages.map((image, index) => (
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    class={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
-                      index === 0 ? 'opacity-100' : 'opacity-0'
-                    }`}
-                    data-index={index}
-                  />
-                ))
-              }
-            </div>
+        <div class="flex flex-col gap-4 pt-2 sm:flex-row">
+          <a
+            href={VoltorkBrochure}
+            download="VOLTORK Brochure.pdf"
+            class="inline-flex items-center justify-center rounded-full bg-slate-950 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-800"
+          >
+            Learn More
+          </a>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-8 py-4 text-base font-semibold text-slate-900 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
+          >
+            Get In Touch
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-3 pt-2 text-sm text-slate-700">
+          <div
+            class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 backdrop-blur-sm"
+          >
+            Precision Controls
           </div>
+          <div
+            class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 backdrop-blur-sm"
+          >
+            Built for Durability
+          </div>
+          <div
+            class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 backdrop-blur-sm"
+          >
+            Performance Focused
+          </div>
+        </div>
+      </div>
+
+      <div class="relative flex min-h-[20rem] items-center justify-center sm:min-h-[24rem] lg:min-h-full lg:justify-end">
+        <div class="relative h-full w-full">
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            class="block h-full w-full bg-white object-contain"
+          >
+            <source src={ToolSpinVideo} type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<script>
-  // Hero image carousel functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.getElementById('hero-carousel');
-    if (!carousel) {
-      console.error('Hero carousel element not found');
-      return;
-    }
-
-    const images = carousel.querySelectorAll('img');
-    if (images.length === 0) {
-      console.error('No images found in carousel');
-      return;
-    }
-
-    console.log(`Found ${images.length} images in carousel`);
-
-    let currentIndex = 0;
-    const totalImages = images.length;
-
-    function showImage(index: number) {
-      // Hide all images
-      images.forEach((img) => {
-        img.classList.remove('opacity-100');
-        img.classList.add('opacity-0');
-      });
-
-      // Show current image
-      images[index].classList.remove('opacity-0');
-      images[index].classList.add('opacity-100');
-    }
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % totalImages;
-      showImage(currentIndex);
-    }
-
-    // Start the carousel
-    let interval = setInterval(nextImage, 3000); // Change image every 3 seconds
-
-    // Pause carousel on hover
-    carousel.addEventListener('mouseenter', () => {
-      clearInterval(interval);
-    });
-
-    // Resume carousel when mouse leaves
-    carousel.addEventListener('mouseleave', () => {
-      interval = setInterval(nextImage, 3000);
-    });
-  });
-</script>

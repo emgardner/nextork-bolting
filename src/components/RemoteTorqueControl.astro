@@ -1,0 +1,132 @@
+---
+import RemoteInterface from '@/assets/remote/interface.jpg';
+import ToolWithDongle from '@/assets/remote/tool_with_dongle.png';
+import UserManual from '@/assets/USER MANUAL VOLTORK 2506.pdf';
+---
+
+<section id="remote-torque-control" class="bg-white py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+    <div class="max-w-3xl space-y-5">
+      <h2
+        class="text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl"
+      >
+        Operate VOLTORK™ tools from a remote PC.
+      </h2>
+      <p class="max-w-2xl text-lg leading-8 text-slate-600">
+        VOLTORK™ tools can be 100% remotely operated via our Remote
+        Torque Control System.
+      </p>
+    </div>
+
+    <div class="mt-14 space-y-6">
+      <div
+        class="grid gap-6 lg:grid-cols-[minmax(0,1.18fr)_minmax(0,0.82fr)]"
+      >
+        <article
+          class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)]"
+        >
+          <div class="p-4 sm:p-6">
+            <img
+              src={RemoteInterface.src}
+              alt="Remote torque control interface"
+              class="block aspect-[16/9] w-full rounded-[1.5rem] border border-slate-200 object-contain"
+            />
+          </div>
+        </article>
+
+        <article
+          class="rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.04)] sm:p-8"
+        >
+          <div class="space-y-5">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.22em] text-sky-700"
+            >
+              Remote Capability
+            </p>
+            <div class="flex items-start gap-3">
+              <div class="mt-2 h-2.5 w-2.5 rounded-full bg-sky-600">
+              </div>
+              <p class="text-base leading-7 text-slate-600">
+                VOLTORK™ tools can be 100% remotely operated via our
+                Remote Torque Control System.
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="mt-2 h-2.5 w-2.5 rounded-full bg-sky-600">
+              </div>
+              <p class="text-base leading-7 text-slate-600">
+                Users can create, save and execute single commands or
+                sequences of commands.
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="mt-2 h-2.5 w-2.5 rounded-full bg-sky-600">
+              </div>
+              <p class="text-base leading-7 text-slate-600">
+                This system can read and control every aspect of the
+                tool from a remote PC via USB.
+              </p>
+            </div>
+            <a
+              href={UserManual}
+              download="USER MANUAL VOLTORK.pdf"
+              class="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-sky-800"
+            >
+              USER MANUAL VOLTORK
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div
+        class="grid gap-6 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]"
+      >
+        <article
+          class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.04)] sm:p-8"
+        >
+          <div class="space-y-5">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.22em] text-sky-700"
+            >
+              USB Control Module
+            </p>
+            <p class="text-base leading-7 text-slate-600">
+              The system includes a USB Control Module which connects
+              to the tool.
+            </p>
+            <div class="flex items-start gap-3">
+              <div class="mt-2 h-2.5 w-2.5 rounded-full bg-sky-600">
+              </div>
+              <p class="text-base leading-7 text-slate-600">
+                Connect the tool to a remote PC for command execution
+                and full readout access.
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="mt-2 h-2.5 w-2.5 rounded-full bg-sky-600">
+              </div>
+              <p class="text-base leading-7 text-slate-600">
+                Built to support both individual operations and saved
+                multi-step sequences.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="overflow-hidden rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.2),transparent_34%),linear-gradient(180deg,#ffffff_0%,#eff6ff_100%)] shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+        >
+          <div
+            class="flex aspect-[16/10] items-center justify-center p-6 sm:p-8"
+          >
+            <img
+              src={ToolWithDongle.src}
+              alt="VOLTORK tool with remote control dongle"
+              class="h-full w-full object-contain"
+            />
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

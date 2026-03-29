@@ -1,0 +1,116 @@
+---
+import PowerVideo from '@/assets/power/2600 tool battery or AC LR.mp4';
+import AcPowerSupply from '@/assets/power/ac_ps_01.png';
+import AcPowerModes from '@/assets/power/ac_ps_04.webp';
+import CarryHandleKit from '@/assets/power/ac_ps_02.png';
+---
+
+<section id="powering-our-tools" class="bg-slate-50 py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+    <div class="max-w-3xl">
+      <h2
+        class="text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl"
+      >
+        Powering Our Tools
+      </h2>
+    </div>
+
+    <div class="mt-14 space-y-6">
+      <article
+        class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)]"
+      >
+        <div
+          class="flex h-full items-center justify-center p-4 sm:p-6 lg:p-8"
+        >
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            class="block aspect-[16/10] w-full bg-white object-contain"
+          >
+            <source src={PowerVideo} type="video/mp4" />
+          </video>
+        </div>
+      </article>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article
+          class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.05)]"
+        >
+          <div
+            class="flex aspect-[16/10] items-center justify-center bg-white p-6"
+          >
+            <img
+              src={AcPowerModes.src}
+              alt="VOLTORK tools with battery and AC power options"
+              class="h-full w-full object-contain"
+            />
+          </div>
+          <div class="space-y-3 px-6 pb-6">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.22em] text-sky-700"
+            >
+              Multiple Power Options
+            </p>
+            <p class="text-lg leading-8 text-slate-600">
+              VOLTORK™ tools can be powered either by Makita® 18V
+              batteries or our AC power supply
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.05)]"
+        >
+          <div
+            class="flex aspect-[16/10] items-center justify-center bg-white p-6"
+          >
+            <img
+              src={AcPowerSupply.src}
+              alt="NexTORK AC power supply"
+              class="h-full w-full object-contain"
+            />
+          </div>
+          <div class="space-y-3 px-6 pb-6">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.22em] text-sky-700"
+            >
+              AC Power Supply
+            </p>
+            <p class="text-lg leading-8 text-slate-600">
+              Versatile AC power supply runs on any voltage between
+              100 and 240 VAC
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.05)]"
+        >
+          <div
+            class="flex aspect-[16/10] items-center justify-center p-6"
+          >
+            <img
+              src={CarryHandleKit.src}
+              alt="Carry handle and cable storage accessory"
+              class="h-full w-full object-contain"
+            />
+          </div>
+          <div class="space-y-3 px-6 pb-6">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.22em] text-sky-700"
+            >
+              Carry Handle Accessory
+            </p>
+            <p class="text-lg leading-8 text-slate-600">
+              Available carry handle makes storing the 24ft (7.3m)
+              cable painless
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
