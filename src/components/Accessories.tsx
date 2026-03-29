@@ -323,7 +323,7 @@ const accessories: Accessory[] = [
 
 const Accessories: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <section id="accessories" className="container mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold text-center mb-8">
         Accessories
       </h2>
@@ -339,7 +339,7 @@ const Accessories: React.FC = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,5 +1,12 @@
 ---
-import MADE_IN_USA from '@/assets/MADE_IN_USA.jpg';
+import AllToolsVideo from '@/assets/tools/All Tools text web LR.mp4';
+import TorqueAngleIcon from '@/assets/tools/torque_angle_2048.png';
+import PrecisionIcon from '@/assets/tools/precision_2048.png';
+import PowerIcon from '@/assets/tools/power_2048.png';
+import AccessoriesIcon from '@/assets/tools/accessories_2048.png';
+
+/*
+Legacy tool grid intentionally commented out for now.
 import ToolGrid from './ToolGrid.tsx';
 import NT200B_SIDE from '@/assets/tools/NT200B_SIDE.webp';
 import NT500B_SIDE from '@/assets/tools/NT500B_SIDE.webp';
@@ -7,7 +14,6 @@ import NT800B_SIDE from '@/assets/tools/NT800B_SIDE.webp';
 import NT1300B_SIDE from '@/assets/tools/NT1300B_SIDE.webp';
 import NT2600B_SIDE from '@/assets/tools/NT2600B_SIDE.webp';
 
-// Sample tool data
 const tools = [
   {
     title: 'NT200B',
@@ -70,106 +76,110 @@ const tools = [
     ],
   },
 ];
+*/
+
+const featureGroups = [
+  {
+    title: 'Torque And Control',
+    icon: TorqueAngleIcon.src,
+    points: [
+      'Torque or torque & angle modes',
+      'Remote control capable',
+    ],
+  },
+  {
+    title: 'Precision And Calibration',
+    icon: PrecisionIcon.src,
+    points: [
+      'Field configurable / calibratable',
+      'Better than 3% accuracy',
+    ],
+  },
+  {
+    title: 'Industrial Performance',
+    icon: PowerIcon.src,
+    points: [
+      'Industrial durability - all metal construction',
+      'Brushless motor with advanced heat management',
+    ],
+  },
+  {
+    title: 'Field Serviceability',
+    icon: AccessoriesIcon.src,
+    points: [
+      'Field replaceable square drives and reaction arms',
+      'Designed and built in the USA',
+    ],
+  },
+];
 ---
 
-<section
-  id="tools"
-  class="py-16 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800"
->
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12 text-foreground">
-      Our Tools
-    </h2>
-
-    <!-- Tool Grid -->
-    <ToolGrid client:load tools={tools} />
-
-    <!-- Features List -->
-    <div
-      class="max-w-4xl mx-auto mb-12 mt-16 flex flex-col items-center"
-    >
-      <h3
-        class="text-2xl font-semibold text-center mb-8 text-foreground"
-      >
-        All of our tools come with
-      </h3>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div class="space-y-3">
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground"
-              >Torque and turn-of-nut modes</span
-            >
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground">Remote control capable</span
-            >
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground"
-              >Better than 5% accuracy</span
-            >
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground"
-              >Durable all metal construction</span
-            >
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground"
-              >Uses Makita® 18V Li-ion batteries</span
-            >
-          </div>
-        </div>
-
-        <div class="space-y-3">
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground"
-              >Brushless motor with advanced heat management</span
-            >
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground"
-              >Field replaceable square drive</span
-            >
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground"
-              >Modular design shares accessories with all other models</span
-            >
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground"
-              >Designed and manufactured in the USA</span
-            >
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-primary rounded-full"></div>
-            <span class="text-foreground">1 year warranty</span>
-          </div>
-        </div>
+<section id="tools" class="bg-white py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+    <div class="space-y-8">
+      <div class="space-y-4">
+        <h2
+          class="max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl"
+        >
+          Our Tools
+        </h2>
       </div>
-    </div>
 
-    <div class="italic text-muted-foreground w-full text-center mb-8">
-      All tool weight's include reaction arm, square drive and battery
-    </div>
+      <article
+        class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)]"
+      >
+        <div
+          class="flex h-full items-center justify-center p-4 sm:p-6 lg:p-8"
+        >
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            class="block aspect-[16/10] w-full object-contain"
+          >
+            <source src={AllToolsVideo} type="video/mp4" />
+          </video>
+        </div>
+      </article>
 
-    <!-- Made in USA Image -->
-    <div class="flex justify-center">
-      <img
-        src={MADE_IN_USA.src}
-        alt="Made in USA"
-        class="max-w-xs w-full h-auto rounded-lg shadow-sm"
-      />
+      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {
+          featureGroups.map((group) => (
+            <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.04)]">
+              <div class="mb-5 flex h-20 w-20 items-center justify-center rounded-[1.5rem] bg-white shadow-sm">
+                <img
+                  src={group.icon}
+                  alt=""
+                  class="h-14 w-14 object-contain"
+                  aria-hidden="true"
+                />
+              </div>
+              <div class="space-y-3">
+                {group.points.map((point) => (
+                  <div class="flex items-start gap-3">
+                    <div class="mt-2 h-2.5 w-2.5 rounded-full bg-sky-600" />
+                    <p class="text-base leading-7 text-slate-600">
+                      {point}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <!--
+      <div class="mt-16">
+        <ToolGrid client:load tools={tools} />
+      </div>
+
+      <div class="mt-10 w-full text-center italic text-slate-500">
+        All tool weights include reaction arm, square drive and battery
+      </div>
+      -->
     </div>
   </div>
 </section>
