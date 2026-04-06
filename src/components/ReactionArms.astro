@@ -1,0 +1,125 @@
+---
+import SteelReactionArm from '@/assets/arms/steel_ra.png';
+import AluminumReactionArm from '@/assets/arms/aluminum_ra.png';
+import CustomReactionArm from '@/assets/arms/custom2_ra.png';
+import SlidingReactionArmVideo from '@/assets/arms/800 tool sliding LR.mp4';
+import ExtensionVideo from '@/assets/arms/1300 tool extensions LR.mp4';
+
+const reactionArmRows = [
+  {
+    title: 'Aluminum Reaction Arms',
+    description:
+      'Lightweight off-the-shelf aluminum arms for teams that need easier handling without giving up reaction support.',
+    mediaType: 'image',
+    mediaSrc: AluminumReactionArm.src,
+    alt: 'Aluminum reaction arm',
+    reverse: false,
+  },
+  {
+    title: 'Steel Reaction Arms',
+    description:
+      'Heavy-duty steel arms built for demanding bolting applications and consistent jobsite durability.',
+    mediaType: 'image',
+    mediaSrc: SteelReactionArm.src,
+    alt: 'Steel reaction arm',
+    reverse: true,
+  },
+  {
+    title: 'Sliding Reaction Arms',
+    description:
+      'Sliding arm configurations provide added reach and positioning flexibility for harder-to-access joints.',
+    mediaType: 'video',
+    mediaSrc: SlidingReactionArmVideo,
+    alt: 'Sliding reaction arm video',
+    mediaBackground: 'transparent',
+    reverse: false,
+  },
+  {
+    title: 'Custom Reaction Arms',
+    description:
+      'When standard options are not enough, we design and manufacture custom reaction arms for your specific application.',
+    mediaType: 'image',
+    mediaSrc: CustomReactionArm.src,
+    alt: 'Custom reaction arm',
+    reverse: true,
+  },
+  {
+    title: 'Reaction Arm Extensions',
+    description:
+      'Extension options expand reach and clearance so your tooling can adapt to more complex bolting setups.',
+    mediaType: 'video',
+    mediaSrc: ExtensionVideo,
+    alt: 'Reaction arm extension video',
+    mediaBackground: 'transparent',
+    reverse: false,
+  },
+];
+---
+
+<section id="reaction-arms" class="bg-slate-50 py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+        Reaction Arms
+      </p>
+      <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+        Standard Options and Custom Solutions
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-slate-600">
+        NexTORK offers a wide range of off-the-shelf reaction arms and can also
+        build custom configurations when the application demands it.
+      </p>
+    </div>
+
+    <div class="mt-14 space-y-8">
+      {
+        reactionArmRows.map((row) => (
+          <article
+            class:list={[
+              'grid gap-8 overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sm:p-8 lg:grid-cols-2 lg:items-center',
+              row.reverse && 'lg:[&>div:first-child]:order-2 lg:[&>div:last-child]:order-1',
+            ]}
+          >
+            <div
+              class:list={[
+                'overflow-hidden rounded-[1.5rem]',
+                row.mediaBackground === 'transparent' ? '' : 'bg-slate-100',
+              ]}
+            >
+              {
+                row.mediaType === 'video' ? (
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    preload="metadata"
+                    class="block aspect-[16/10] w-full object-contain"
+                  >
+                    <source src={row.mediaSrc} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img
+                    src={row.mediaSrc}
+                    alt={row.alt}
+                    class="block aspect-[16/10] w-full object-contain p-6"
+                    loading="lazy"
+                  />
+                )
+              }
+            </div>
+
+            <div class="max-w-xl">
+              <h3 class="text-3xl font-semibold tracking-[-0.03em] text-slate-950">
+                {row.title}
+              </h3>
+              <p class="mt-4 text-lg leading-8 text-slate-600">
+                {row.description}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
