@@ -1,166 +1,120 @@
 ---
-// About Us section component
+import AboutToolVideo from '@/assets/about/2600 tool spin LR.mp4';
+import USFlag from '@/assets/about/US Flag.png';
 ---
 
 <section
   id="about"
-  class="py-16 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 dark:from-slate-800 dark:via-gray-800 dark:to-slate-900"
+  class="relative isolate overflow-hidden bg-[#262626] py-20 text-white sm:py-24"
 >
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl mx-auto">
-      <!-- Section Header -->
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.12),_transparent_30%)]"></div>
+  <div class="absolute inset-0 bg-[linear-gradient(135deg,_rgba(255,255,255,0.04),_transparent_42%)]"></div>
+  <div id="contact" class="absolute top-0 h-px w-px"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+    <div class="flex items-center justify-between gap-6 border-b border-white/10 pb-6">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-300">
           About Us
+        </p>
+        <h2 class="mt-3 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
+          Designed, Built, and Supported in New Jersey
         </h2>
-        <div
-          class="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mx-auto mb-6"
-        >
-        </div>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Can a company constantly operate strictly by its Mission,
-          Vision and Values?
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed mt-4">
-          Ours does, and since you would like to learn more about us,
-          here is what we believe in:
-        </p>
       </div>
+      <div class="hidden h-px flex-1 bg-white/10 lg:block"></div>
+    </div>
 
-      <!-- Mission, Vision, Values Grid -->
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Mission -->
-        <div
-          class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-        >
-          <div class="text-center mb-6">
-            <div
-              class="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4"
+    <div class="mt-12 grid gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
+      <div class="flex flex-col flex-1 h-full justify-between">
+        <article class="overflow-hidden rounded-[2rem] border border-white/10 bg-white shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+          <div class="flex items-center justify-center p-6 sm:p-8">
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              class="block aspect-[4/3] w-full object-contain"
             >
-              <svg
-                class="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">
-              Our Mission
-            </h3>
+              <source src={AboutToolVideo} type="video/mp4" />
+            </video>
           </div>
-          <p class="text-gray-700 leading-relaxed text-center">
-            To consistently achieve technological perfection while
-            maintaining business excellence.
-          </p>
-        </div>
+        </article>
 
-        <!-- Vision -->
-        <div
-          class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-        >
-          <div class="text-center mb-6">
-            <div
-              class="w-16 h-16 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">
-              Our Vision
-            </h3>
-          </div>
-          <p class="text-gray-700 leading-relaxed text-center">
-            We provide measurable value to the bolting industry
-            through proven best practices and by continuously
-            listening to our customers.
-          </p>
-        </div>
+        <div class="rounded-[2rem] border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
+          <h3 class="text-2xl font-semibold text-white">Contact Us</h3>
+          <ul class="mt-6 space-y-4 text-lg leading-8 text-slate-200">
+            <li class="flex items-start gap-3">
+              <span class="mt-3 h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+              <span>Have a question about our products?</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-3 h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+              <span>Want to discuss a project?</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-3 h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+              <span>Interested in scheduling a visit to our NJ facility?</span>
+            </li>
+          </ul>
 
-        <!-- Values -->
-        <div
-          class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-        >
-          <div class="text-center mb-6">
-            <div
-              class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4"
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a
+              href="mailto:info@nextork.net"
+              class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 via-blue-500 to-fuchsia-600 px-7 py-4 text-base font-semibold text-white shadow-[0_18px_40px_rgba(14,165,233,0.25)] transition-transform duration-300 hover:-translate-y-0.5"
             >
-              <svg
-                class="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">
-              Our Values
-            </h3>
-          </div>
-          <div class="space-y-3">
-            <div class="flex items-start gap-3">
-              <div
-                class="w-2 h-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mt-2 flex-shrink-0"
-              >
-              </div>
-              <span class="text-gray-700"
-                >Innovation to enable our customers' success</span
-              >
-            </div>
-            <div class="flex items-start gap-3">
-              <div
-                class="w-2 h-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mt-2 flex-shrink-0"
-              >
-              </div>
-              <span class="text-gray-700"
-                >Quality of design and workmanship</span
-              >
-            </div>
-            <div class="flex items-start gap-3">
-              <div
-                class="w-2 h-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mt-2 flex-shrink-0"
-              >
-              </div>
-              <span class="text-gray-700"
-                >Commitment to our customers</span
-              >
-            </div>
+              info@nextork.net
+            </a>
+            <p class="text-sm leading-7 text-slate-300">
+              Reach out to discuss tooling, site visits, or application support.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Bottom decorative element -->
-      <div class="flex justify-center mt-12">
-        <div
-          class="w-32 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full"
-        >
+      <div class="relative">
+        <div class="space-y-8 text-lg leading-9 text-slate-100">
+          <p>
+            At NexTORK, we design and manufacture high-performance torque tools
+            with a strong focus on innovation and reliability. By integrating
+            advanced metallurgy, cutting-edge electronics, and user-focused
+            engineering, we deliver torque solutions trusted by professionals for
+            their precision, durability, and efficiency.
+          </p>
+
+          <p>
+            From the shop floor to the most demanding field environments,
+            NexTORK tools provide consistent accuracy for industries that rely on
+            critical bolting applications. We welcome the opportunity to
+            demonstrate how our technology and expertise can help improve the
+            performance and efficiency of your operations.
+          </p>
+
+          <p>
+            NexTORK is an American company based in Boonton, New Jersey, where
+            all of our tools and accessories are designed and manufactured. We
+            would be pleased to host you at our facility and provide a firsthand
+            look at our engineering, manufacturing, and testing capabilities.
+          </p>
+        </div>
+
+        <div class="mt-10 flex items-end justify-between gap-6">
+          <div class="max-w-md rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-sky-300">
+              Visit NexTORK
+            </p>
+            <p class="mt-4 text-base leading-8 text-slate-200">
+              Boonton, New Jersey
+              <br />
+              American engineering, manufacturing, and testing under one roof.
+            </p>
+          </div>
+
+          <img
+            src={USFlag.src}
+            alt="United States flag graphic"
+            class="hidden w-52 max-w-[38%] object-contain lg:block"
+          />
         </div>
       </div>
     </div>
