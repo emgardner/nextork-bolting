@@ -1,0 +1,313 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductBrochure from '@/assets/downloads/Voltork_Brochure_112825.pdf';
+
+import UserCal from '@/assets/pages/accessories/User Cal.jpg';
+import RemoteControl from '@/assets/pages/accessories/remote_cont 03.jpg';
+
+import Battery from '@/assets/pages/accessories/makita_battery.webp';
+import Charger from '@/assets/pages/accessories/battery_charger.webp';
+import AcPowerLowProfile from '@/assets/pages/accessories/ac_ps_01.png';
+import AcPowerHandle from '@/assets/pages/accessories/ac_ps_02.png';
+
+import SquareDrive34 from '@/assets/pages/accessories/3-4in-standard-square-drive.webp';
+import SquareDrive1 from '@/assets/pages/accessories/1in-standard-square-drive.webp';
+import Reducer1 from '@/assets/pages/accessories/1in-reducer-square-drive.webp';
+import Reducer15 from '@/assets/pages/accessories/1-1-2in-reducer-square-drive.webp';
+
+import AluminumArm from '@/assets/pages/accessories/pic03_a.png';
+import SteelArm from '@/assets/pages/accessories/pic02_a.png';
+import WheelAttachment from '@/assets/pages/accessories/pic01_a.png';
+import SlidingArmShort from '@/assets/pages/accessories/pic36.png';
+import SlidingArmLong from '@/assets/pages/accessories/pic37.png';
+import Extension6 from '@/assets/pages/accessories/pic04_a.png';
+import Extension12 from '@/assets/pages/accessories/pic05_a.png';
+import Extension18 from '@/assets/pages/accessories/pic07_a.png';
+import MountingKit from '@/assets/pages/accessories/mounting_kit.webp';
+
+const controlSystems = [
+  {
+    title: 'VOLTORK User Calibration System',
+    partNo: 'NTA-000076',
+    image: UserCal.src,
+    alt: 'VOLTORK user calibration system interface',
+    description:
+      'Calibrate all VOLTORK tools using the supplied USB control module and PC software to adjust calibration parameters, enable or disable tool features, and update tool firmware.',
+  },
+  {
+    title: 'VOLTORK Remote Torque Control',
+    partNo: 'NTA-000080',
+    image: RemoteControl.src,
+    alt: 'VOLTORK remote torque control interface',
+    description:
+      'Control VOLTORK tools remotely with live parameter monitoring, single commands, or complete command sequences. The tool must be physically constrained during operation.',
+  },
+];
+
+const powerAccessories = [
+  {
+    title: 'Makita 18V 4.0 Battery',
+    partNo: 'NTC-000001',
+    image: Battery.src,
+    alt: 'Makita 18V battery',
+    description: 'All tools compatibility',
+  },
+  {
+    title: 'Makita 18V Charger',
+    partNo: 'NTC-000002',
+    image: Charger.src,
+    alt: 'Makita battery charger',
+    description: 'All tools compatibility',
+  },
+  {
+    title: 'AC Power Supply',
+    partNo: 'NTA-000077',
+    image: AcPowerLowProfile.src,
+    alt: 'Low profile AC power supply',
+    description: 'Low profile 100-240 VAC',
+  },
+  {
+    title: 'AC Power Supply with Carry Handle',
+    partNo: 'NTA-000078',
+    image: AcPowerHandle.src,
+    alt: 'AC power supply with carry handle',
+    description: 'Carry handle 100-240 VAC',
+  },
+];
+
+const squareDrives = [
+  {
+    title: 'Standard 3/4" Square Drive',
+    partNo: 'NTA-000044',
+    image: SquareDrive34.src,
+    alt: '3/4 inch standard square drive',
+  },
+  {
+    title: 'Standard 1" Square Drive',
+    partNo: 'NTA-000045',
+    image: SquareDrive1.src,
+    alt: '1 inch standard square drive',
+  },
+  {
+    title: '2600 1" Square Drive',
+    partNo: 'NTA-000072',
+    image: Reducer1.src,
+    alt: '1 inch reducer square drive for NT2600',
+  },
+  {
+    title: '2600 1-1/2" Square Drive',
+    partNo: 'NTA-000073',
+    image: Reducer15.src,
+    alt: '1-1/2 inch reducer square drive for NT2600',
+  },
+];
+
+const extensions = [
+  {
+    title: '6" Ultra-Light Extension',
+    partNo: 'NTA-000041',
+    image: Extension6.src,
+    alt: '6 inch ultra-light extension',
+    description: '1300 ft-lb max',
+  },
+  {
+    title: '12" Ultra-Light Extension',
+    partNo: 'NTA-000042',
+    image: Extension12.src,
+    alt: '12 inch ultra-light extension',
+    description: '1300 ft-lb max',
+  },
+  {
+    title: '18" Ultra-Light Extension',
+    partNo: 'NTA-000043',
+    image: Extension18.src,
+    alt: '18 inch ultra-light extension',
+    description: '1300 ft-lb max',
+  },
+];
+
+const reactionArms = [
+  {
+    title: 'Standard Aluminum Reaction Arm',
+    partNo: 'NTA-000028',
+    image: AluminumArm.src,
+    alt: 'Standard aluminum reaction arm',
+    description: '500 ft-lb max',
+  },
+  {
+    title: 'Standard Steel Reaction Arm',
+    partNo: 'NTA-000031',
+    image: SteelArm.src,
+    alt: 'Standard steel reaction arm',
+    description: '1300 ft-lb max',
+  },
+  {
+    title: 'Wheel Attachment',
+    partNo: 'NTA-000046',
+    image: WheelAttachment.src,
+    alt: 'Wheel bolting attachment',
+    description: 'Tight-space wheel bolting, 1300 ft-lb max',
+  },
+  {
+    title: 'Sliding Reaction Arm',
+    partNo: 'NTA-000084',
+    image: SlidingArmShort.src,
+    alt: 'Sliding reaction arm 3/4 inch square drive, 3 to 8.5 inch range',
+    description: '3" to 8.5" range, 3/4" square drive',
+  },
+  {
+    title: 'Sliding Reaction Arm',
+    partNo: 'NTA-000083',
+    image: SlidingArmShort.src,
+    alt: 'Sliding reaction arm 1 inch square drive, 3 to 8.5 inch range',
+    description: '3" to 8.5" range, 1" square drive',
+  },
+  {
+    title: 'Sliding Reaction Arm',
+    partNo: 'NTA-000082',
+    image: SlidingArmLong.src,
+    alt: 'Sliding reaction arm 3/4 inch square drive, 4 to 12 inch range',
+    description: '4" to 12" range, 3/4" square drive',
+  },
+  {
+    title: 'Sliding Reaction Arm',
+    partNo: 'NTA-000081',
+    image: SlidingArmLong.src,
+    alt: 'Sliding reaction arm 1 inch square drive, 4 to 12 inch range',
+    description: '4" to 12" range, 1" square drive',
+  },
+];
+
+const hardwareAccessories = [
+  ...powerAccessories,
+  ...squareDrives,
+  ...extensions,
+  ...reactionArms,
+  {
+    title: 'Accessory Mounting Kit',
+    partNo: 'Mounting hardware',
+    image: MountingKit.src,
+    alt: 'Accessory mounting kit',
+    description:
+      'Includes 2 pins and 2 set screws for mounting NexTORK reaction arms and extensions.',
+  },
+];
+---
+
+<Layout>
+  <main class="bg-slate-100 text-slate-950">
+    <section class="bg-white pt-28 sm:pt-32">
+      <div class="mx-auto max-w-7xl px-6 pb-16 sm:px-8 sm:pb-20 lg:px-12">
+        <div class="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+              Accessories
+            </p>
+            <h1 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+              Platform accessories built around the VOLTORK system
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-slate-600">
+              Power, control, square drives, extensions, and reaction arm options
+              designed to expand the capability of the full VOLTORK lineup.
+            </p>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href={ProductBrochure}
+                download="VOLTORK Product Brochure.pdf"
+                class="inline-flex items-center justify-center rounded-full bg-slate-950 px-8 py-4 text-base font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5 hover:bg-sky-800"
+              >
+                Download Brochure
+              </a>
+              <a
+                href="/#contact"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
+              >
+                Ask About Accessories
+              </a>
+            </div>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            {controlSystems.map((item) => (
+              <article class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-50 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
+                <div class="p-4">
+                  <div class="flex aspect-[16/10] items-center justify-center rounded-[1.5rem] bg-white p-4">
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      class="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+                <div class="px-6 pb-6">
+                  <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
+                    {item.partNo}
+                  </p>
+                  <h2 class="mt-3 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
+                    {item.title}
+                  </h2>
+                  <p class="mt-4 text-base leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+            Hardware Grid
+          </p>
+          <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+            Power accessories, square drives, extensions, reaction arms, and mounting hardware
+          </h2>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {hardwareAccessories.map((item) => (
+            <article class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
+              <div class="p-4">
+                <div class="flex aspect-[4/3] items-center justify-center rounded-[1.5rem] bg-slate-50 p-5">
+                  <img src={item.image} alt={item.alt} class="h-full w-full object-contain" />
+                </div>
+              </div>
+              <div class="px-6 pb-6">
+                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
+                  {item.partNo}
+                </p>
+                <h3 class="mt-3 text-xl font-semibold text-slate-950">{item.title}</h3>
+                {item.description ? (
+                  <p class="mt-3 text-base leading-7 text-slate-600">{item.description}</p>
+                ) : null}
+              </div>
+            </article>
+          ))}
+
+          <article class="rounded-[1.75rem] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_18px_50px_rgba(15,23,42,0.12)] md:col-span-2 xl:col-span-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">Custom Options</p>
+            <h3 class="mt-3 text-2xl font-semibold">Custom Reaction Arms and Weld Blanks</h3>
+            <p class="mt-4 text-base leading-7 text-slate-300">
+              Reaction arm weld blank for custom applications:
+              <span class="font-semibold text-white"> NTF-000039</span>.
+              NexTORK can also provide custom-made reaction arms tailored to your
+              joint geometry, clearances, and work envelope.
+            </p>
+            <div class="mt-6">
+              <a
+                href="/#contact"
+                class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                Contact NexTORK
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

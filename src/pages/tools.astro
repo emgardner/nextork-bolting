@@ -1,0 +1,413 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ToolChart from '@/assets/pages/tools/Tool Chart.png';
+import IntroVideo from '@/assets/pages/tools/Intro LR.mp4';
+import AllToolsVideo from '@/assets/pages/tools/All Tools text web LR.mp4';
+import ChangeoverVideo from '@/assets/pages/tools/2600 tool changeover LR.mp4';
+import NT200B from '@/assets/pages/tools/NT200B_SIDE.webp';
+import NT500B from '@/assets/pages/tools/NT500B_SIDE.webp';
+import NT800B from '@/assets/pages/tools/NT800B_SIDE.webp';
+import NT1300B from '@/assets/pages/tools/NT1300B_SIDE.webp';
+import NT2600B from '@/assets/pages/tools/NT2600B_SIDE.webp';
+import ProductBrochure from '@/assets/downloads/Voltork_Brochure_112825.pdf';
+
+const componentTables = [
+  [
+    ['1a', 'NTC-000001', '18V Li-Ion battery, 4.0 Ah'],
+    ['1b', 'NTC-000002', '18V battery charger'],
+    ['2a', 'NTA-000077', 'AC power supply - low profile'],
+    ['2b', 'NTA-000078', 'AC power supply - carry handle and cable storage'],
+    ['3', 'NTC-000003', 'Case, battery tool'],
+    ['4', 'NTA-000015', 'NT200B electric torque wrench, 200 ft-lb, 60.1 RPM'],
+    ['5', 'NTA-000016', 'NT500B electric torque wrench, 500 ft-lb, 17.4 RPM'],
+    ['6', 'NTA-000017', 'NT800B electric torque wrench, 800 ft-lb, 12.2 RPM'],
+    ['7', 'NTA-000018', 'NT1300B electric torque wrench, 1300 ft-lb, 6.6 RPM'],
+    ['8a', 'NTA-000020', 'NT2600B electric torque wrench, 1" SQ, 2600 ft-lb, 3.0 RPM'],
+    ['8b', 'NTA-000019', 'NT2600B electric torque wrench, 1-1/2" SQ, 2600 ft-lb, 3.0 RPM'],
+    ['9', 'NTA-000041', '6" tool extension'],
+  ],
+  [
+    ['10', 'NTA-000042', '12" tool extension'],
+    ['11', 'NTA-000043', '18" tool extension'],
+    ['12', 'NTA-000044', '3/4" standard square drive'],
+    ['13', 'NTA-000045', '1" standard square drive'],
+    ['14', 'NTA-000046', 'Wheel bolting attachment'],
+    ['15', 'NTA-000031', 'Standard steel reaction arm, 1300 ft-lb max'],
+    ['16', 'NTA-000028', 'Standard aluminum reaction arm, 500 ft-lb max'],
+    ['17', 'NTF-000039', 'Reaction arm weld blank for custom applications'],
+    ['18', 'NTA-000084', 'Sliding reaction arm 3/4" square drive, 3" to 8.5" range'],
+    ['19', 'NTA-000083', 'Sliding reaction arm 1" square drive, 3" to 8.5" range'],
+    ['20', 'NTA-000082', 'Sliding reaction arm 3/4" square drive, 4" to 12" range'],
+    ['21', 'NTA-000081', 'Sliding reaction arm 1" square drive, 4" to 12" range'],
+  ],
+];
+
+const introVideos = [IntroVideo, AllToolsVideo, ChangeoverVideo];
+
+const capabilities = [
+  'Torque or torque & angle modes',
+  'Remote control capable',
+  'Field configurable / calibratable',
+  'Better than 3% accuracy',
+  'Industrial durability - all metal construction',
+  'Brushless motor with advanced heat management',
+  'Field replaceable square drives and reaction arms',
+  'Designed and built in the USA',
+];
+
+const tools = [
+  {
+    name: 'NT200B',
+    image: NT200B.src,
+    specs: [
+      ['Output Drive', '3/4" SQ', '3/4" SQ'],
+      ['Max Torque', '200 ft-lb', '271 N-m'],
+      ['Min Torque', '20 ft-lb', '27 N-m'],
+      ['Max Speed', '60.1 RPM', '60.1 RPM'],
+      ['System Accuracy', '<3%', '<3%'],
+      ['Tool Weight', '9.0 lb', '4.1 kg'],
+      ['Total Weight', '10.6 lb', '4.8 kg'],
+      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Warranty', '1 year limited', '1 year limited'],
+    ],
+  },
+  {
+    name: 'NT500B',
+    image: NT500B.src,
+    specs: [
+      ['Output Drive', '3/4" or 1" SQ', '3/4" or 1" SQ'],
+      ['Max Torque', '500 ft-lb', '678 N-m'],
+      ['Min Torque', '50 ft-lb', '68 N-m'],
+      ['Max Speed', '17.4 RPM', '17.4 RPM'],
+      ['System Accuracy', '<3%', '<3%'],
+      ['Tool Weight', '10.0 lb', '4.5 kg'],
+      ['Total Weight', '11.7 lb', '5.3 kg'],
+      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Warranty', '1 year limited', '1 year limited'],
+    ],
+  },
+  {
+    name: 'NT800B',
+    image: NT800B.src,
+    specs: [
+      ['Output Drive', '3/4" or 1" SQ', '3/4" or 1" SQ'],
+      ['Max Torque', '800 ft-lb', '1085 N-m'],
+      ['Min Torque', '80 ft-lb', '108 N-m'],
+      ['Max Speed', '12.2 RPM', '12.2 RPM'],
+      ['System Accuracy', '<3%', '<3%'],
+      ['Tool Weight', '10.0 lb', '4.5 kg'],
+      ['Total Weight', '13.4 lb', '6.1 kg'],
+      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Warranty', '1 year limited', '1 year limited'],
+    ],
+  },
+  {
+    name: 'NT1300B',
+    image: NT1300B.src,
+    specs: [
+      ['Output Drive', '1" SQ', '1" SQ'],
+      ['Max Torque', '1300 ft-lb', '1763 N-m'],
+      ['Min Torque', '130 ft-lb', '176 N-m'],
+      ['Max Speed', '6.6 RPM', '6.6 RPM'],
+      ['System Accuracy', '<3%', '<3%'],
+      ['Tool Weight', '11.3 lb', '5.1 kg'],
+      ['Total Weight', '14.9 lb', '6.8 kg'],
+      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Warranty', '1 year limited', '1 year limited'],
+    ],
+  },
+  {
+    name: 'NT2600B',
+    image: NT2600B.src,
+    specs: [
+      ['Output Drive', '1" or 1-1/2" SQ', '1" or 1-1/2" SQ'],
+      ['Max Torque', '2600 ft-lb', '3525 N-m'],
+      ['Min Torque', '260 ft-lb', '353 N-m'],
+      ['Max Speed', '3.0 RPM', '3.0 RPM'],
+      ['System Accuracy', '<3%', '<3%'],
+      ['Tool Weight', '19.9 lb', '9.0 kg'],
+      ['Total Weight', '19.9 lb', '9.0 kg'],
+      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Warranty', '1 year limited', '1 year limited'],
+    ],
+  },
+];
+---
+
+<Layout>
+  <main class="bg-slate-100 text-slate-950">
+    <section class="bg-slate-50 pt-28 sm:pt-32">
+      <div class="mx-auto max-w-7xl px-6 pb-16 sm:px-8 sm:pb-20 lg:px-12">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
+          <article class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
+            <div class="p-4 sm:p-6">
+              <video
+                id="tools-intro-video"
+                data-videos={JSON.stringify(introVideos)}
+                autoplay
+                muted
+                playsinline
+                preload="metadata"
+                class="block aspect-[16/10] w-full object-contain"
+              >
+                <source src={introVideos[0]} type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+              Tool Features
+            </p>
+            <h1 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+              Core capabilities across the VOLTORK range
+            </h1>
+            <div class="mt-8 grid gap-3 sm:grid-cols-2">
+              {
+                capabilities.map((item) => (
+                  <div class="rounded-[1.25rem] border border-slate-200 bg-white px-5 py-4 text-base leading-7 text-slate-700">
+                    {item}
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white pt-28 sm:pt-32">
+      <div class="mx-auto max-w-7xl px-6 pb-16 sm:px-8 sm:pb-20 lg:px-12">
+        <div class="grid gap-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:items-center">
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+              VOLTORK Tools
+            </p>
+            <h1 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+              Modular electric torque system
+            </h1>
+            <p class="mt-5 max-w-xl text-lg leading-8 text-slate-600">
+              Shared tooling architecture with interchangeable components,
+              accessories, and coverage from 200 to 2600 ft-lb.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href={ProductBrochure}
+                download="VOLTORK Product Brochure.pdf"
+                class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                Download Brochure
+              </a>
+              <a
+                href="/#contact"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
+              >
+                Talk to NexTORK
+              </a>
+            </div>
+          </div>
+
+          <img
+            src={ToolChart.src}
+            alt="VOLTORK modular torque system chart"
+            class="block w-full object-contain"
+          />
+        </div>
+
+        <div class="mt-14">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+              System Components
+            </p>
+            <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+              Modular torque system parts and accessories.
+            </h2>
+          </div>
+
+          <div class="mt-8 overflow-x-auto pb-4">
+            <div class="grid min-w-[70rem] gap-6 lg:grid-cols-2">
+              {
+                componentTables.map((rows) => (
+                  <div class="overflow-hidden rounded-[1.5rem] border border-slate-300 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
+                    <table class="w-full border-collapse text-left text-sm">
+                      <thead class="bg-sky-100 text-slate-950">
+                        <tr>
+                          <th class="border-b border-slate-300 px-3 py-2 font-semibold">
+                            Item
+                          </th>
+                          <th class="border-b border-slate-300 px-3 py-2 font-semibold">
+                            Part No
+                          </th>
+                          <th class="border-b border-slate-300 px-3 py-2 font-semibold">
+                            Description
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {
+                          rows.map((row, index) => (
+                            <tr class={index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                              <td class="border-b border-slate-200 px-3 py-2 whitespace-nowrap text-slate-950">
+                                {row[0]}
+                              </td>
+                              <td class="border-b border-slate-200 px-3 py-2 whitespace-nowrap text-slate-950">
+                                {row[1]}
+                              </td>
+                              <td class="border-b border-slate-200 px-3 py-2 whitespace-nowrap text-slate-700">
+                                {row[2]}
+                              </td>
+                            </tr>
+                          ))
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+            Tool Lineup
+          </p>
+          <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+            All tools with model-by-model specifications.
+          </h2>
+        </div>
+
+        <div class="mt-8 flex items-center justify-end">
+          <div
+            id="unit-toggle"
+            class="inline-flex rounded-full border border-slate-200 bg-white p-1 shadow-sm"
+          >
+            <button
+              type="button"
+              data-unit="imperial"
+              class="unit-toggle-btn rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition-colors"
+              aria-pressed="true"
+            >
+              Imperial
+            </button>
+            <button
+              type="button"
+              data-unit="metric"
+              class="unit-toggle-btn rounded-full px-4 py-2 text-sm font-semibold text-slate-600 transition-colors"
+              aria-pressed="false"
+            >
+              Metric
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-6 overflow-x-auto pb-4">
+          <div class="flex min-w-max gap-6">
+          {
+            tools.map((tool) => (
+              <article class="flex w-[21rem] shrink-0 flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
+                <div class="flex aspect-[4/3] items-center justify-center rounded-[1.5rem] bg-slate-100 p-4">
+                  <img
+                    src={tool.image}
+                    alt={tool.name}
+                    class="h-full w-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="mt-5 text-2xl font-semibold text-slate-950">
+                  {tool.name}
+                </h3>
+                <div class="mt-4 overflow-hidden rounded-[1rem] border border-slate-200">
+                  <table class="w-full text-left text-sm leading-6">
+                    <tbody>
+                      {
+                        tool.specs.map(([label, imperial, metric], index) => (
+                          <tr class={index % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
+                            <th class="w-[42%] border-b border-slate-200 px-3 py-2 font-semibold text-slate-950">
+                              {label}
+                            </th>
+                            <td
+                              class="border-b border-slate-200 px-3 py-2 whitespace-nowrap text-slate-600"
+                              data-imperial={imperial}
+                              data-metric={metric}
+                            >
+                              {imperial}
+                            </td>
+                          </tr>
+                        ))
+                      }
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+            ))
+          }
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<script>
+  const introVideo = document.getElementById('tools-intro-video');
+  const toggle = document.getElementById('unit-toggle');
+  const valueCells = document.querySelectorAll('[data-imperial]');
+
+  if (introVideo) {
+    const sources = JSON.parse(introVideo.getAttribute('data-videos') || '[]');
+    let currentVideoIndex = 0;
+
+    const playCurrentVideo = () => {
+      if (sources.length === 0) return;
+      introVideo.src = sources[currentVideoIndex];
+      introVideo.play().catch(() => {});
+    };
+
+    introVideo.addEventListener('ended', () => {
+      currentVideoIndex = (currentVideoIndex + 1) % sources.length;
+      playCurrentVideo();
+    });
+
+    playCurrentVideo();
+  }
+
+  if (toggle && valueCells.length > 0) {
+    const buttons = toggle.querySelectorAll('.unit-toggle-btn');
+
+    const setUnit = (unit) => {
+      valueCells.forEach((cell) => {
+        const value = cell.getAttribute(
+          unit === 'metric' ? 'data-metric' : 'data-imperial'
+        );
+
+        if (value) {
+          cell.textContent = value;
+        }
+      });
+
+      buttons.forEach((button) => {
+        const active = button.getAttribute('data-unit') === unit;
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        button.classList.toggle('bg-slate-950', active);
+        button.classList.toggle('text-white', active);
+        button.classList.toggle('text-slate-600', !active);
+      });
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const unit = button.getAttribute('data-unit');
+        if (unit) setUnit(unit);
+      });
+    });
+
+    setUnit('imperial');
+  }
+</script>

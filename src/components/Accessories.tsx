@@ -1,5 +1,4 @@
 import React from 'react';
-import FeatureCard from './FeatureCard.tsx';
 
 import threeQuarterInStandardSquareDrive from '@/assets/accessories/3-4in-standard-square-drive.webp';
 import oneInStandardSquareDrive from '@/assets/accessories/1in-standard-square-drive.webp';
@@ -323,21 +322,61 @@ const accessories: Accessory[] = [
 
 const Accessories: React.FC = () => {
   return (
-    <section id="accessories" className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8">
-        Accessories
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {accessories.map((accessory, index) => (
-          <FeatureCard
-            key={index}
-            title={accessory.title}
-            description={accessory.description}
-            features={accessory.features}
-            imageSrc={accessory.imageSrc}
-            imageAlt={accessory.imageAlt}
-          />
-        ))}
+    <section id="accessories" className="bg-white py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+            Accessories
+          </p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+            Shared platform accessories for the full VOLTORK system.
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-slate-600">
+            Field-replaceable square drives, power accessories, and mounting
+            hardware designed to keep tools configurable and ready for work.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {accessories.map((accessory, index) => (
+            <article
+              key={index}
+              className="flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-50 shadow-[0_18px_50px_rgba(15,23,42,0.06)]"
+            >
+              <div className="p-4 sm:p-5">
+                <div className="flex aspect-[4/3] items-center justify-center rounded-[1.5rem] bg-white p-6">
+                  <img
+                    src={accessory.imageSrc}
+                    alt={accessory.imageAlt}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-1 flex-col px-6 pb-6 pt-1">
+                <h3 className="text-2xl font-semibold tracking-[-0.03em] text-slate-950">
+                  {accessory.title}
+                </h3>
+                {accessory.description ? (
+                  <p className="mt-3 text-base leading-7 text-slate-600">
+                    {accessory.description}
+                  </p>
+                ) : null}
+                <ul className="mt-5 space-y-3">
+                  {accessory.features.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className="flex items-start gap-3 text-sm leading-6 text-slate-600"
+                    >
+                      <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-sky-600"></span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
