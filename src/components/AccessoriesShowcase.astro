@@ -1,0 +1,202 @@
+---
+import SlidingReactionArmVideo from '@/assets/arms/800 tool sliding LR.mp4';
+import ExtensionVideo from '@/assets/arms/1300 tool extensions LR.mp4';
+import IntroVideo from '@/assets/pages/tools/Intro LR.mp4';
+
+const accessoryCards = [
+  {
+    eyebrow: 'Reaction Arm Options',
+    title: 'Standard, sliding, and custom solutions',
+    body:
+      'Choose from standard aluminum and steel arms, sliding configurations, and custom-built solutions for more specialized bolting setups.',
+  },
+  {
+    eyebrow: 'Extensions And Reach',
+    title: 'More clearance when space gets tight',
+    body:
+      'Extension options help teams reach harder-to-access joints while keeping the overall tool platform familiar in the field.',
+  },
+];
+
+const accessoryClips = [
+  {
+    label: 'Sliding Arms',
+    title: 'Sliding reaction arms in action',
+    description:
+      'Added reach and positioning flexibility for bolting applications with tighter clearances.',
+    src: SlidingReactionArmVideo,
+  },
+  {
+    label: 'VOLTORK Intro',
+    title: 'The broader VOLTORK accessory ecosystem',
+    description:
+      'A quick look at the system context between the accessory-specific product clips.',
+    src: IntroVideo,
+  },
+  {
+    label: 'Extensions',
+    title: 'Reaction arm extensions in action',
+    description:
+      'Extension options expand clearance and reach for more complex joint layouts.',
+    src: ExtensionVideo,
+  },
+];
+---
+
+<section id="accessories" class="bg-white py-20 sm:py-24">
+  <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+    <div
+      class="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-center"
+    >
+      <div class="flex flex-col justify-between gap-8">
+        <div class="max-w-2xl">
+          <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+            Accessories
+          </h2>
+          <p class="mt-6 text-lg leading-8 text-slate-600">
+            NexTORK accessories help configure each tool for the application,
+            from extensions and reaction options to the supporting hardware that
+            keeps the system adaptable in the field.
+          </p>
+        </div>
+
+        <div class="grid gap-4">
+          {
+            accessoryCards.map((card) => (
+              <article class="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-[0_16px_40px_rgba(15,23,42,0.04)]">
+                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
+                  {card.eyebrow}
+                </p>
+                <h3 class="mt-3 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
+                  {card.title}
+                </h3>
+                <p class="mt-4 text-base leading-7 text-slate-600">
+                  {card.body}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/accessories"
+            class="inline-flex items-center justify-center rounded-full bg-slate-950 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-800"
+          >
+            View Accessories
+          </a>
+          <a
+            href="/#contact"
+            class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-900 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
+          >
+            Talk to Us
+          </a>
+        </div>
+      </div>
+
+      <article
+        class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
+        data-accessory-reel
+        data-playlist={JSON.stringify(accessoryClips)}
+      >
+        <div class="relative border-b border-white/10 bg-slate-950">
+          <video
+            data-reel-video
+            autoplay
+            muted
+            playsinline
+            preload="metadata"
+            class="block aspect-[16/10] w-full bg-white object-contain"
+          >
+            <source src={accessoryClips[0].src} type="video/mp4" />
+          </video>
+          <div
+            class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/20 to-transparent"
+          >
+          </div>
+        </div>
+
+        <div class="space-y-6 p-6 sm:p-8">
+          <div class="max-w-2xl">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
+              Accessory Reel
+            </p>
+            <h3
+              data-reel-title
+              class="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white"
+            >
+              {accessoryClips[0].title}
+            </h3>
+            <p
+              data-reel-description
+              class="mt-4 text-base leading-7 text-slate-300"
+            >
+              {accessoryClips[0].description}
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+  const reels = document.querySelectorAll('[data-accessory-reel]');
+
+  reels.forEach((reel) => {
+    const playlist = JSON.parse(reel.getAttribute('data-playlist') ?? '[]');
+    const video = reel.querySelector('video[data-reel-video]');
+    const title = reel.querySelector('[data-reel-title]');
+    const description = reel.querySelector('[data-reel-description]');
+    const buttons = Array.from(
+      reel.querySelectorAll('[data-reel-button]')
+    );
+
+    if (!video || !title || !description || !playlist.length) {
+      return;
+    }
+
+    let currentIndex = 0;
+
+    const render = (nextIndex) => {
+      currentIndex = (nextIndex + playlist.length) % playlist.length;
+      const clip = playlist[currentIndex];
+
+      title.textContent = clip.title;
+      description.textContent = clip.description;
+
+
+      if (video.dataset.activeSrc !== clip.src) {
+        video.dataset.activeSrc = clip.src;
+        video.src = clip.src;
+        video.load();
+      }
+
+      const playPromise = video.play();
+      if (playPromise) {
+        playPromise.catch(() => {});
+      }
+    };
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        render(index);
+      });
+    });
+
+    video.addEventListener('ended', () => {
+      render(currentIndex + 1);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        const playPromise = video.play();
+        if (playPromise) {
+          playPromise.catch(() => {});
+        }
+      }
+    });
+
+    render(0);
+  });
+</script>

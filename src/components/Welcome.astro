@@ -5,9 +5,9 @@ import RemoteTorqueControl from './RemoteTorqueControl.astro';
 import Industries from './Industries.astro';
 import Downloads from './Downloads.astro';
 import AboutUs from './AboutUs.astro';
-import ReactionArms from './ReactionArms.astro';
 import ToolSection from './ToolSection.astro';
-import Accessories from './Accessories.tsx';
+import AccessoriesShowcase from './AccessoriesShowcase.astro';
+import ReactionArms from './ReactionArms.astro';
 ---
 
 <div class="min-h-screen flex flex-col">
@@ -15,7 +15,7 @@ import Accessories from './Accessories.tsx';
   <PoweringTools />
   <RemoteTorqueControl />
   <ToolSection />
-  <Accessories client:load />
+  <AccessoriesShowcase />
   <ReactionArms />
   <Industries />
   <Downloads />

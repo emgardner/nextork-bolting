@@ -15,34 +15,35 @@ import SquareDrive1 from '@/assets/pages/accessories/1in-standard-square-drive.w
 import Reducer1 from '@/assets/pages/accessories/1in-reducer-square-drive.webp';
 import Reducer15 from '@/assets/pages/accessories/1-1-2in-reducer-square-drive.webp';
 
-import AluminumArm from '@/assets/pages/accessories/pic03_a.png';
-import SteelArm from '@/assets/pages/accessories/pic02_a.png';
-import WheelAttachment from '@/assets/pages/accessories/pic01_a.png';
+import AluminumArm from '@/assets/pages/accessories/pic02_a.png';
+import SteelArm from '@/assets/pages/accessories/pic01_a.png';
+import WheelAttachment from '@/assets/pages/accessories/pic04_a.png';
+import CustomAttachment from '@/assets/pages/accessories/pic03_a.png';
 import SlidingArmShort from '@/assets/pages/accessories/pic36.png';
 import SlidingArmLong from '@/assets/pages/accessories/pic37.png';
-import Extension6 from '@/assets/pages/accessories/pic04_a.png';
-import Extension12 from '@/assets/pages/accessories/pic05_a.png';
+import Extension6 from '@/assets/pages/accessories/pic05_a.png';
+import Extension12 from '@/assets/pages/accessories/pic06_a.png';
 import Extension18 from '@/assets/pages/accessories/pic07_a.png';
 import MountingKit from '@/assets/pages/accessories/mounting_kit.webp';
+import Blank from '@/assets/pages/accessories/blank.png';
 
-const controlSystems = [
-  {
-    title: 'VOLTORK User Calibration System',
-    partNo: 'NTA-000076',
-    image: UserCal.src,
-    alt: 'VOLTORK user calibration system interface',
-    description:
-      'Calibrate all VOLTORK tools using the supplied USB control module and PC software to adjust calibration parameters, enable or disable tool features, and update tool firmware.',
-  },
-  {
-    title: 'VOLTORK Remote Torque Control',
-    partNo: 'NTA-000080',
-    image: RemoteControl.src,
-    alt: 'VOLTORK remote torque control interface',
-    description:
-      'Control VOLTORK tools remotely with live parameter monitoring, single commands, or complete command sequences. The tool must be physically constrained during operation.',
-  },
-];
+const userCalibrationSystem = {
+  title: 'VOLTORK User Calibration System',
+  partNo: 'NTA-000076',
+  image: UserCal.src,
+  alt: 'VOLTORK user calibration system interface',
+  description:
+    'Calibrate all VOLTORK tools using the supplied USB control module and PC software to adjust calibration parameters, enable or disable tool features, and update tool firmware.',
+};
+
+const remoteTorqueControlSystem = {
+  title: 'VOLTORK Remote Torque Control',
+  partNo: 'NTA-000080',
+  image: RemoteControl.src,
+  alt: 'VOLTORK remote torque control interface',
+  description:
+    'Control VOLTORK tools remotely with live parameter monitoring, single commands, or complete command sequences. The tool must be physically constrained during operation.',
+};
 
 const powerAccessories = [
   {
@@ -92,17 +93,25 @@ const squareDrives = [
     title: '2600 1" Square Drive',
     partNo: 'NTA-000072',
     image: Reducer1.src,
-    alt: '1 inch reducer square drive for NT2600',
+    alt: 'For all removable square reducers',
+    description: 'For all removable square reducers',
   },
   {
     title: '2600 1-1/2" Square Drive',
     partNo: 'NTA-000073',
     image: Reducer15.src,
-    alt: '1-1/2 inch reducer square drive for NT2600',
+    description: 'For all removable square reducers',
   },
 ];
 
 const extensions = [
+  {
+    title: 'Wheel Attachment',
+    partNo: 'NTA-000046',
+    image: WheelAttachment.src,
+    alt: '6 inch ultra-light extension',
+    description: 'Tight space & wheel bolting, 1300 ft-lb max',
+  },
   {
     title: '6" Ultra-Light Extension',
     partNo: 'NTA-000041',
@@ -117,6 +126,7 @@ const extensions = [
     alt: '12 inch ultra-light extension',
     description: '1300 ft-lb max',
   },
+
   {
     title: '18" Ultra-Light Extension',
     partNo: 'NTA-000043',
@@ -127,6 +137,7 @@ const extensions = [
 ];
 
 const reactionArms = [
+
   {
     title: 'Standard Aluminum Reaction Arm',
     partNo: 'NTA-000028',
@@ -142,12 +153,20 @@ const reactionArms = [
     description: '1300 ft-lb max',
   },
   {
-    title: 'Wheel Attachment',
-    partNo: 'NTA-000046',
-    image: WheelAttachment.src,
+    title: 'Custom Designed Reaction Arms',
+    partNo: 'Contact NexTORK',
+    image: CustomAttachment.src,
     alt: 'Wheel bolting attachment',
-    description: 'Tight-space wheel bolting, 1300 ft-lb max',
+    description: 'Built for your application',
   },
+  {
+    title: 'Reaction Arm Blank',
+    partNo: 'NTF-000039',
+    image: Blank.src,
+    alt: 'Wheel bolting attachment',
+    description: 'Built your own reaction arm',
+  },
+
   {
     title: 'Sliding Reaction Arm',
     partNo: 'NTA-000084',
@@ -183,13 +202,41 @@ const hardwareAccessories = [
   ...squareDrives,
   ...extensions,
   ...reactionArms,
+  // {
+  //   title: 'Accessory Mounting Kit',
+  //   partNo: 'Mounting hardware',
+  //   image: MountingKit.src,
+  //   alt: 'Accessory mounting kit',
+  //   description:
+  //     'Includes 2 pins and 2 set screws for mounting NexTORK reaction arms and extensions.',
+  // },
+];
+
+const accessoryHeroSlides = [
+  ...powerAccessories.map((item) => ({
+    ...item,
+    category: 'Power Accessories',
+  })),
+  ...squareDrives.map((item) => ({
+    ...item,
+    category: 'Square Drives',
+  })),
+  ...extensions.map((item) => ({
+    ...item,
+    category: 'Extensions',
+  })),
+  ...reactionArms.map((item) => ({
+    ...item,
+    category: 'Reaction Arms',
+  })),
   {
     title: 'Accessory Mounting Kit',
-    partNo: 'Mounting hardware',
+    partNo: 'Mounting Hardware',
     image: MountingKit.src,
     alt: 'Accessory mounting kit',
     description:
       'Includes 2 pins and 2 set screws for mounting NexTORK reaction arms and extensions.',
+    category: 'Mounting Hardware',
   },
 ];
 ---
@@ -219,7 +266,7 @@ const hardwareAccessories = [
                 Download Brochure
               </a>
               <a
-                href="/#contact"
+                href="mailto:info@nextork.net?subject=Accessories%20Inquiry"
                 class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
               >
                 Ask About Accessories
@@ -227,32 +274,180 @@ const hardwareAccessories = [
             </div>
           </div>
 
-          <div class="grid gap-6 sm:grid-cols-2">
-            {controlSystems.map((item) => (
-              <article class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-50 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-                <div class="p-4">
-                  <div class="flex aspect-[16/10] items-center justify-center rounded-[1.5rem] bg-white p-4">
-                    <img
-                      src={item.image}
-                      alt={item.alt}
-                      class="h-full w-full object-contain"
-                    />
+          <article
+            class="flex flex-col"
+            data-accessories-hero
+          >
+            <div class="relative min-h-[34rem] overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
+              {
+                accessoryHeroSlides.map((item, index) => (
+                  <div
+                    data-slide
+                    data-active={index === 0 ? 'true' : 'false'}
+                    aria-hidden={index === 0 ? 'false' : 'true'}
+                    class:list={[
+                      'absolute inset-0 grid grid-rows-[minmax(0,1fr)_auto] transition-all duration-500 ease-out',
+                      index === 0
+                        ? 'translate-y-0 opacity-100'
+                        : 'pointer-events-none translate-y-4 opacity-0',
+                    ]}
+                  >
+                    <div class="flex items-center justify-center bg-white p-6 sm:p-8">
+                      <img
+                        src={item.image}
+                        alt={item.alt}
+                        class="h-full max-h-[18rem] w-full object-contain sm:max-h-[20rem]"
+                      />
+                    </div>
+                    <div class="border-t border-white/10 bg-slate-950 px-6 py-6 text-white sm:px-8">
+                      <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
+                        {item.category}
+                      </p>
+                      <div class="mt-3 flex flex-wrap items-center gap-3">
+                        <h2 class="text-2xl font-semibold tracking-[-0.03em] text-white">
+                          {item.title}
+                        </h2>
+                        <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
+                          {item.partNo}
+                        </span>
+                      </div>
+                      {item.description ? (
+                        <p class="mt-4 max-w-2xl text-base leading-7 text-slate-300">
+                          {item.description}
+                        </p>
+                      ) : null}
+                    </div>
                   </div>
-                </div>
-                <div class="px-6 pb-6">
-                  <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
-                    {item.partNo}
-                  </p>
-                  <h2 class="mt-3 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
-                    {item.title}
-                  </h2>
-                  <p class="mt-4 text-base leading-7 text-slate-600">
-                    {item.description}
-                  </p>
-                </div>
-              </article>
-            ))}
+                ))
+              }
+            </div>
+
+            <div class="mt-5 flex items-center justify-between gap-4">
+              <p
+                data-slide-count
+                class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500"
+              >
+                01 / {String(accessoryHeroSlides.length).padStart(2, '0')}
+              </p>
+
+              <div class="flex items-center gap-3">
+                <button
+                  type="button"
+                  data-slide-prev
+                  class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-colors hover:border-slate-950 hover:text-slate-950"
+                  aria-label="Previous accessory"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                  >
+                    <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  data-slide-next
+                  class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-colors hover:border-slate-950 hover:text-slate-950"
+                  aria-label="Next accessory"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                  >
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:items-center">
+          <article class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+            <div class="p-4 sm:p-6">
+              <div class="flex aspect-[16/10] items-center justify-center rounded-[1.5rem] bg-slate-50 p-4">
+                <img
+                  src={userCalibrationSystem.image}
+                  alt={userCalibrationSystem.alt}
+                  class="h-full w-full object-contain"
+                />
+              </div>
+            </div>
+          </article>
+
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+              User Calibration System
+            </p>
+            <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+              Configure, calibrate, and update tools in-house
+            </h2>
+            <div class="mt-6 inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-600">
+              {userCalibrationSystem.partNo}
+            </div>
+            <p class="mt-6 text-lg leading-8 text-slate-600">
+              {userCalibrationSystem.description}
+            </p>
+            <div class="mt-8">
+              <a
+                href="mailto:info@nextork.net?subject=User%20Calibration%20System%20Inquiry"
+                class="inline-flex items-center justify-center rounded-full bg-slate-950 px-8 py-4 text-base font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5 hover:bg-sky-800"
+              >
+                Ask About Calibration
+              </a>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.96fr)_minmax(0,1.04fr)] lg:items-center">
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+              Remote Torque Control
+            </p>
+            <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+              Control VOLTORK tools from a connected PC
+            </h2>
+            <div class="mt-6 inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-600">
+              {remoteTorqueControlSystem.partNo}
+            </div>
+            <p class="mt-6 text-lg leading-8 text-slate-600">
+              {remoteTorqueControlSystem.description}
+            </p>
+            <div class="mt-8">
+              <a
+                href="mailto:info@nextork.net?subject=Remote%20Torque%20Control%20Inquiry"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
+              >
+                Ask About Remote Control
+              </a>
+            </div>
+          </div>
+
+          <article class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+            <div class="p-4 sm:p-6">
+              <div class="flex aspect-[16/10] items-center justify-center rounded-[1.5rem] bg-white p-4">
+                <img
+                  src={remoteTorqueControlSystem.image}
+                  alt={remoteTorqueControlSystem.alt}
+                  class="h-full w-full object-contain"
+                />
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -292,10 +487,8 @@ const hardwareAccessories = [
             <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">Custom Options</p>
             <h3 class="mt-3 text-2xl font-semibold">Custom Reaction Arms and Weld Blanks</h3>
             <p class="mt-4 text-base leading-7 text-slate-300">
-              Reaction arm weld blank for custom applications:
-              <span class="font-semibold text-white"> NTF-000039</span>.
-              NexTORK can also provide custom-made reaction arms tailored to your
-              joint geometry, clearances, and work envelope.
+              NexTORK simplifies custom applications. We offer a reaction arm blank that allows customers to weld their own fixture using our
+detailed instructions, or we can design and manufacture a fully finished reaction arm at our facility—ready for immediate use.
             </p>
             <div class="mt-6">
               <a
@@ -310,4 +503,74 @@ const hardwareAccessories = [
       </div>
     </section>
   </main>
+
+  <script>
+    const heroCarousel = document.querySelector('[data-accessories-hero]');
+
+    if (heroCarousel) {
+      const slides = Array.from(heroCarousel.querySelectorAll('[data-slide]'));
+      const previousButton = heroCarousel.querySelector('[data-slide-prev]');
+      const nextButton = heroCarousel.querySelector('[data-slide-next]');
+      const counter = heroCarousel.querySelector('[data-slide-count]');
+      let activeIndex = slides.findIndex(
+        (slide) => slide.getAttribute('data-active') === 'true'
+      );
+      let autoplay;
+
+      if (activeIndex < 0) {
+        activeIndex = 0;
+      }
+
+      const render = (nextIndex) => {
+        activeIndex = (nextIndex + slides.length) % slides.length;
+
+        slides.forEach((slide, index) => {
+          const isActive = index === activeIndex;
+          slide.setAttribute('data-active', String(isActive));
+          slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+          slide.classList.toggle('opacity-100', isActive);
+          slide.classList.toggle('translate-y-0', isActive);
+          slide.classList.toggle('pointer-events-none', !isActive);
+          slide.classList.toggle('opacity-0', !isActive);
+          slide.classList.toggle('translate-y-4', !isActive);
+        });
+
+        if (counter) {
+          counter.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+        }
+      };
+
+      const stopAutoplay = () => {
+        if (autoplay) {
+          clearInterval(autoplay);
+          autoplay = undefined;
+        }
+      };
+
+      const startAutoplay = () => {
+        stopAutoplay();
+        autoplay = setInterval(() => {
+          render(activeIndex + 1);
+        }, 3600);
+      };
+
+      previousButton?.addEventListener('click', () => {
+        render(activeIndex - 1);
+        startAutoplay();
+      });
+
+      nextButton?.addEventListener('click', () => {
+        render(activeIndex + 1);
+        startAutoplay();
+      });
+
+      heroCarousel.addEventListener('mouseenter', stopAutoplay);
+      heroCarousel.addEventListener('mouseleave', startAutoplay);
+      heroCarousel.addEventListener('focusin', stopAutoplay);
+      heroCarousel.addEventListener('focusout', startAutoplay);
+
+      render(activeIndex);
+      startAutoplay();
+    }
+  </script>
 </Layout>

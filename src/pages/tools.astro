@@ -45,14 +45,62 @@ const componentTables = [
 const introVideos = [IntroVideo, AllToolsVideo, ChangeoverVideo];
 
 const capabilities = [
-  'Torque or torque & angle modes',
-  'Remote control capable',
-  'Field configurable / calibratable',
-  'Better than 3% accuracy',
-  'Industrial durability - all metal construction',
-  'Brushless motor with advanced heat management',
-  'Field replaceable square drives and reaction arms',
-  'Designed and built in the USA',
+  {
+    eyebrow: 'Torque Modes',
+    text: 'Torque or torque & angle modes',
+    tint: 'from-sky-50 via-white to-white',
+    eyebrowTint: 'text-sky-700',
+    border: 'hover:border-sky-300/70 hover:bg-sky-50/60',
+  },
+  {
+    eyebrow: 'Remote Control',
+    text: 'Remote control capable',
+    tint: 'from-cyan-50 via-white to-white',
+    eyebrowTint: 'text-cyan-700',
+    border: 'hover:border-cyan-300/70 hover:bg-cyan-50/60',
+  },
+  {
+    eyebrow: 'Field Calibration',
+    text: 'Field configurable / calibratable',
+    tint: 'from-blue-50 via-white to-white',
+    eyebrowTint: 'text-blue-700',
+    border: 'hover:border-blue-300/70 hover:bg-blue-50/60',
+  },
+  {
+    eyebrow: 'Accuracy',
+    text: 'Better than 3% accuracy',
+    tint: 'from-indigo-50 via-white to-white',
+    eyebrowTint: 'text-indigo-700',
+    border: 'hover:border-indigo-300/70 hover:bg-indigo-50/60',
+  },
+  {
+    eyebrow: 'Metal Construction',
+    text: 'Industrial durability - all metal construction',
+    tint: 'from-slate-100 via-white to-white',
+    eyebrowTint: 'text-slate-700',
+    border: 'hover:border-slate-300/80 hover:bg-slate-50/70',
+  },
+  {
+    eyebrow: 'Heat Management',
+    text: 'Brushless motor with advanced heat management',
+    tint: 'from-amber-50 via-white to-white',
+    eyebrowTint: 'text-amber-700',
+    border: 'hover:border-amber-300/70 hover:bg-amber-50/60',
+  },
+  {
+    eyebrow: 'Field Service',
+    text: 'Field replaceable square drives and reaction arms',
+    tint: 'from-emerald-50 via-white to-white',
+    eyebrowTint: 'text-emerald-700',
+    border: 'hover:border-emerald-300/70 hover:bg-emerald-50/60',
+  },
+  {
+    eyebrow: 'USA Built',
+    text: 'Designed and built in the USA',
+    tint: 'from-rose-50 via-white to-white',
+    eyebrowTint: 'text-rose-700',
+    border: 'hover:border-rose-300/70 hover:bg-rose-50/60',
+  },
 ];
 
 const tools = [
@@ -67,7 +115,7 @@ const tools = [
       ['System Accuracy', '<3%', '<3%'],
       ['Tool Weight', '9.0 lb', '4.1 kg'],
       ['Total Weight', '10.6 lb', '4.8 kg'],
-      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Power Source', 'Battery/AC', 'Battery/AC'],
       ['Warranty', '1 year limited', '1 year limited'],
     ],
   },
@@ -82,7 +130,7 @@ const tools = [
       ['System Accuracy', '<3%', '<3%'],
       ['Tool Weight', '10.0 lb', '4.5 kg'],
       ['Total Weight', '11.7 lb', '5.3 kg'],
-      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Power Source', 'Battery/AC', 'Battery/AC'],
       ['Warranty', '1 year limited', '1 year limited'],
     ],
   },
@@ -97,7 +145,7 @@ const tools = [
       ['System Accuracy', '<3%', '<3%'],
       ['Tool Weight', '10.0 lb', '4.5 kg'],
       ['Total Weight', '13.4 lb', '6.1 kg'],
-      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Power Source', 'Battery/AC', 'Battery/AC'],
       ['Warranty', '1 year limited', '1 year limited'],
     ],
   },
@@ -112,7 +160,7 @@ const tools = [
       ['System Accuracy', '<3%', '<3%'],
       ['Tool Weight', '11.3 lb', '5.1 kg'],
       ['Total Weight', '14.9 lb', '6.8 kg'],
-      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Power Source', 'Battery/AC', 'Battery/AC'],
       ['Warranty', '1 year limited', '1 year limited'],
     ],
   },
@@ -127,7 +175,7 @@ const tools = [
       ['System Accuracy', '<3%', '<3%'],
       ['Tool Weight', '19.9 lb', '9.0 kg'],
       ['Total Weight', '19.9 lb', '9.0 kg'],
-      ['Power Source', '100 to 240 VAC or Makita 18V batteries', '100 to 240 VAC or Makita 18V batteries'],
+      ['Power Source', 'Battery/AC', 'Battery/AC'],
       ['Warranty', '1 year limited', '1 year limited'],
     ],
   },
@@ -138,40 +186,67 @@ const tools = [
   <main class="bg-slate-100 text-slate-950">
     <section class="bg-slate-50 pt-28 sm:pt-32">
       <div class="mx-auto max-w-7xl px-6 pb-16 sm:px-8 sm:pb-20 lg:px-12">
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
-          <article class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
-            <div class="p-4 sm:p-6">
-              <video
-                id="tools-intro-video"
-                data-videos={JSON.stringify(introVideos)}
-                autoplay
-                muted
-                playsinline
-                preload="metadata"
-                class="block aspect-[16/10] w-full object-contain"
-              >
-                <source src={introVideos[0]} type="video/mp4" />
-              </video>
-            </div>
-          </article>
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
+            Tool Features
+          </p>
+          <h1 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+            Core capabilities across the VOLTORK range
+          </h1>
+        </div>
 
-          <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
-              Tool Features
-            </p>
-            <h1 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
-              Core capabilities across the VOLTORK range
-            </h1>
-            <div class="mt-8 grid gap-3 sm:grid-cols-2">
-              {
-                capabilities.map((item) => (
-                  <div class="rounded-[1.25rem] border border-slate-200 bg-white px-5 py-4 text-base leading-7 text-slate-700">
-                    {item}
-                  </div>
-                ))
-              }
-            </div>
+        <article class="mt-10 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
+          <div class="p-4 sm:p-6 lg:p-8">
+            <video
+              id="tools-intro-video"
+              data-videos={JSON.stringify(introVideos)}
+              autoplay
+              muted
+              playsinline
+              preload="metadata"
+              class="block aspect-[16/9] w-full object-contain"
+            >
+              <source src={introVideos[0]} type="video/mp4" />
+            </video>
           </div>
+        </article>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            capabilities.map((item) => (
+              <article
+                class:list={[
+                  'group relative overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.1)]',
+                  item.border,
+                ]}
+              >
+                <div
+                  aria-hidden="true"
+                  class:list={[
+                    'absolute inset-0 bg-gradient-to-br opacity-95',
+                    item.tint,
+                  ]}
+                >
+                </div>
+
+                <div class="relative flex h-full flex-col p-6 sm:p-7">
+                  <p
+                    class:list={[
+                      'text-xs font-semibold uppercase tracking-[0.24em]',
+                      item.eyebrowTint,
+                    ]}
+                  >
+                    {item.eyebrow}
+                  </p>
+                  <p class="mt-4 text-lg font-medium leading-8 text-slate-800">
+                    {item.text}
+                  </p>
+
+                  <div class="mt-6 h-1 w-16 rounded-full bg-slate-900/10"></div>
+                </div>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -200,7 +275,7 @@ const tools = [
                 Download Brochure
               </a>
               <a
-                href="/#contact"
+                href="mailto:info@nextork.net?subject=VOLTORK%20Inquiry"
                 class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
               >
                 Talk to NexTORK
@@ -208,12 +283,53 @@ const tools = [
             </div>
           </div>
 
+          <button
+            type="button"
+            data-chart-open
+            class="group relative block w-full overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-50 p-3 text-left shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.1)]"
+            aria-label="Open modular torque system image full screen"
+          >
+            <img
+              src={ToolChart.src}
+              alt="VOLTORK modular torque system chart"
+              class="block w-full object-contain"
+            />
+            <div class="pointer-events-none absolute inset-x-4 bottom-4 flex justify-end">
+              <span class="rounded-full border border-white/80 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-700 shadow-sm transition-transform duration-300 group-hover:-translate-y-0.5">
+                View Full Screen
+              </span>
+            </div>
+          </button>
+        </div>
+
+        <dialog
+          id="tool-chart-modal"
+          class="m-auto w-[min(96vw,92rem)] max-w-none overflow-hidden rounded-[2rem] border border-white/15 bg-white p-3 text-slate-950 shadow-[0_30px_90px_rgba(15,23,42,0.35)] backdrop:bg-slate-950/80 backdrop:backdrop-blur-sm"
+        >
+          <div class="flex items-center justify-end pb-3">
+            <button
+              type="button"
+              data-chart-close
+              class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:border-slate-950 hover:text-slate-950"
+              aria-label="Close modular torque system image"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+          </div>
           <img
             src={ToolChart.src}
             alt="VOLTORK modular torque system chart"
-            class="block w-full object-contain"
+            class="block max-h-[85vh] w-full object-contain"
           />
-        </div>
+        </dialog>
 
         <div class="mt-14">
           <div class="max-w-3xl">
@@ -278,7 +394,7 @@ const tools = [
             Tool Lineup
           </p>
           <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
-            All tools with model-by-model specifications.
+            All tools with specification comparison.
           </h2>
         </div>
 
@@ -311,11 +427,11 @@ const tools = [
           {
             tools.map((tool) => (
               <article class="flex w-[21rem] shrink-0 flex-col rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
-                <div class="flex aspect-[4/3] items-center justify-center rounded-[1.5rem] bg-slate-100 p-4">
+                <div class="flex h-72 items-center justify-center rounded-[1.5rem] bg-slate-100 p-4">
                   <img
                     src={tool.image}
                     alt={tool.name}
-                    class="h-full w-full object-contain"
+                    class="h-56 w-auto max-w-full object-contain"
                     loading="lazy"
                   />
                 </div>
@@ -323,12 +439,12 @@ const tools = [
                   {tool.name}
                 </h3>
                 <div class="mt-4 overflow-hidden rounded-[1rem] border border-slate-200">
-                  <table class="w-full text-left text-sm leading-6">
+                  <table class="w-full whitespace-nowrap text-left text-sm leading-6">
                     <tbody>
                       {
                         tool.specs.map(([label, imperial, metric], index) => (
                           <tr class={index % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
-                            <th class="w-[42%] border-b border-slate-200 px-3 py-2 font-semibold text-slate-950">
+                            <th class="w-[42%] whitespace-nowrap border-b border-slate-200 px-3 py-2 font-semibold text-slate-950">
                               {label}
                             </th>
                             <td
@@ -359,6 +475,9 @@ const tools = [
   const introVideo = document.getElementById('tools-intro-video');
   const toggle = document.getElementById('unit-toggle');
   const valueCells = document.querySelectorAll('[data-imperial]');
+  const chartOpenButton = document.querySelector('[data-chart-open]');
+  const chartModal = document.getElementById('tool-chart-modal');
+  const chartCloseButton = document.querySelector('[data-chart-close]');
 
   if (introVideo) {
     const sources = JSON.parse(introVideo.getAttribute('data-videos') || '[]');
@@ -409,5 +528,25 @@ const tools = [
     });
 
     setUnit('imperial');
+  }
+
+  if (chartOpenButton && chartModal) {
+    chartOpenButton.addEventListener('click', () => {
+      if (typeof chartModal.showModal === 'function') {
+        chartModal.showModal();
+      } else {
+        chartModal.setAttribute('open', 'true');
+      }
+    });
+
+    chartCloseButton?.addEventListener('click', () => {
+      chartModal.close();
+    });
+
+    chartModal.addEventListener('click', (event) => {
+      if (event.target === chartModal) {
+        chartModal.close();
+      }
+    });
   }
 </script>

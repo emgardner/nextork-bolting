@@ -3,6 +3,8 @@ import ProductBrochure from '@/assets/downloads/Voltork_Brochure_112825.pdf';
 import UserManual from '@/assets/downloads/USER MANUAL VOLTORK 2506.pdf';
 import QuickStartGuide from '@/assets/downloads/Quick Start Guide.pdf';
 
+const youtubeUrl = 'https://www.youtube.com/@NexTORK-Bolting?app=desktop';
+
 const downloads = [
   {
     title: 'VOLTORK Product Brochure',
@@ -25,6 +27,13 @@ const downloads = [
     accent: 'from-blue-400 to-indigo-500',
     tag: 'PDF',
   },
+  {
+    title: 'Visit NexTORK on YouTube',
+    href: youtubeUrl,
+    accent: 'from-red-400 to-rose-500',
+    tag: 'VIDEO',
+    external: true,
+  },
 ];
 ---
 
@@ -36,18 +45,20 @@ const downloads = [
           Downloads
         </p>
         <h2 class="mt-3 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-          Technical Documents and Product Literature
+          Technical Documents, Product Literature, and Videos
         </h2>
       </div>
       <div class="hidden h-px flex-1 bg-white/10 lg:block"></div>
     </div>
 
-    <div class="mt-10 grid gap-5 lg:grid-cols-3">
+    <div class="mt-10 grid gap-5 lg:grid-cols-4">
       {
         downloads.map((item) => (
           <a
             href={item.href}
-            download={item.filename}
+            download={item.external ? undefined : item.filename}
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noreferrer' : undefined}
             class="group flex items-center gap-5 rounded-[1.75rem] border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/40 hover:bg-white/8"
           >
             <div
@@ -56,11 +67,24 @@ const downloads = [
               <span class="text-[0.65rem] font-semibold uppercase tracking-[0.24em]">
                 {item.tag}
               </span>
-              <div class="space-y-1">
-                <div class="h-1.5 w-10 rounded-full bg-white/90"></div>
-                <div class="h-1.5 w-8 rounded-full bg-white/70"></div>
-                <div class="h-1.5 w-12 rounded-full bg-white/55"></div>
-              </div>
+              {
+                item.external ? (
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-9 w-9 text-white"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31.8 31.8 0 0 0 0 12a31.8 31.8 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.8 31.8 0 0 0 24 12a31.8 31.8 0 0 0-.5-5.8ZM9.6 15.7V8.3l6.5 3.7-6.5 3.7Z"></path>
+                  </svg>
+                ) : (
+                  <div class="space-y-1">
+                    <div class="h-1.5 w-10 rounded-full bg-white/90"></div>
+                    <div class="h-1.5 w-8 rounded-full bg-white/70"></div>
+                    <div class="h-1.5 w-12 rounded-full bg-white/55"></div>
+                  </div>
+                )
+              }
             </div>
 
             <div class="min-w-0">
@@ -68,7 +92,7 @@ const downloads = [
                 {item.title}
               </h3>
               <p class="mt-3 text-sm uppercase tracking-[0.24em] text-slate-400">
-                Download PDF
+                {item.external ? 'Open Channel' : 'Download PDF'}
               </p>
             </div>
           </a>
