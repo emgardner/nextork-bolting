@@ -11,13 +11,15 @@ const youtubeUrl = 'https://www.youtube.com/@NexTORK-Bolting?app=desktop';
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
+      <a href="/">
       <div class="flex items-center">
         <img
           src={logoImage.src}
           alt="Nextork Bolting Logo"
           class="h-10 w-auto"
         />
-      </div>
+        </div>
+      </a>
 
       <div class="flex items-center gap-3">
         <!-- Desktop Navigation -->
@@ -28,6 +30,11 @@ const youtubeUrl = 'https://www.youtube.com/@NexTORK-Bolting?app=desktop';
             >Home</a
           >
           <a
+            href="/tools"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            >Tools</a
+          >
+          <a
             href="/accessories"
             class="text-gray-600 hover:text-gray-900 transition-colors"
             >Accessories</a
@@ -36,11 +43,6 @@ const youtubeUrl = 'https://www.youtube.com/@NexTORK-Bolting?app=desktop';
             href="/#about"
             class="text-gray-600 hover:text-gray-900 transition-colors"
             >About</a
-          >
-          <a
-            href="/tools"
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            >Tools</a
           >
           <a
             href="/#contact"
