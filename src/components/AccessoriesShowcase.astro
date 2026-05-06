@@ -44,7 +44,7 @@ const accessoryClips = [
 ---
 
 <section id="accessories" class="bg-white py-20 sm:py-24">
-  <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+  <div class="site-container">
     <div
       class="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-center"
     >
@@ -86,7 +86,7 @@ const accessoryClips = [
             View Accessories
           </a>
           <a
-            href="/#contact"
+            href="mailto:info@nextork.net?subject=Accessories%20Inquiry"
             class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-900 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
           >
             Talk to Us
@@ -95,11 +95,11 @@ const accessoryClips = [
       </div>
 
       <article
-        class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
+        class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.12)]"
         data-accessory-reel
         data-playlist={JSON.stringify(accessoryClips)}
       >
-        <div class="relative border-b border-white/10 bg-slate-950">
+        <div class="relative bg-white">
           <video
             data-reel-video
             autoplay
@@ -110,26 +110,22 @@ const accessoryClips = [
           >
             <source src={accessoryClips[0].src} type="video/mp4" />
           </video>
-          <div
-            class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/20 to-transparent"
-          >
-          </div>
         </div>
 
         <div class="space-y-6 p-6 sm:p-8">
           <div class="max-w-2xl">
-            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
               Accessory Reel
             </p>
             <h3
               data-reel-title
-              class="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white"
+              class="mt-3 text-3xl font-semibold tracking-[-0.03em] text-slate-950"
             >
               {accessoryClips[0].title}
             </h3>
             <p
               data-reel-description
-              class="mt-4 text-base leading-7 text-slate-300"
+              class="mt-4 text-base leading-7 text-slate-600"
             >
               {accessoryClips[0].description}
             </p>

@@ -185,7 +185,7 @@ const tools = [
 <Layout>
   <main class="bg-slate-100 text-slate-950">
     <section class="bg-slate-50 pt-28 sm:pt-32">
-      <div class="mx-auto max-w-7xl px-6 pb-16 sm:px-8 sm:pb-20 lg:px-12">
+      <div class="site-container pb-16 sm:pb-20">
         <div class="max-w-3xl">
           <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
             Tool Features
@@ -252,7 +252,7 @@ const tools = [
     </section>
 
     <section class="bg-white pt-28 sm:pt-32">
-      <div class="mx-auto max-w-7xl px-6 pb-16 sm:px-8 sm:pb-20 lg:px-12">
+      <div class="site-container pb-16 sm:pb-20">
         <div class="grid gap-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:items-center">
           <div class="max-w-2xl">
             <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
@@ -270,7 +270,7 @@ const tools = [
               <a
                 href={ProductBrochure}
                 download="VOLTORK Product Brochure.pdf"
-                class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5"
+                class="inline-flex items-center justify-center rounded-full bg-slate-950 px-8 py-4 text-base font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5 hover:bg-sky-800"
               >
                 Download Brochure
               </a>
@@ -332,15 +332,6 @@ const tools = [
         </dialog>
 
         <div class="mt-14">
-          <div class="max-w-3xl">
-            <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
-              System Components
-            </p>
-            <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
-              Modular torque system parts and accessories.
-            </h2>
-          </div>
-
           <div class="mt-8 overflow-x-auto pb-4">
             <div class="grid min-w-[70rem] gap-6 lg:grid-cols-2">
               {
@@ -388,17 +379,16 @@ const tools = [
     </section>
 
     <section class="bg-slate-50 py-20 sm:py-24">
-      <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <div class="max-w-3xl">
+      <div class="site-container">
+        <div class="w-full">
           <p class="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
             Tool Lineup
           </p>
+          <div class="flex items-center justify-between">
           <h2 class="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
             All tools with specification comparison.
-          </h2>
-        </div>
-
-        <div class="mt-8 flex items-center justify-end">
+            </h2>
+        <div class="flex items-center justify-end">
           <div
             id="unit-toggle"
             class="inline-flex rounded-full border border-slate-200 bg-white p-1 shadow-sm"
@@ -421,6 +411,9 @@ const tools = [
             </button>
           </div>
         </div>
+          </div>
+        </div>
+
 
         <div class="mt-6 overflow-x-auto pb-4">
           <div class="flex min-w-max gap-6">

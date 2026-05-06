@@ -22,7 +22,7 @@ interface ToolGridProps {
 
 const ToolGrid: React.FC<ToolGridProps> = ({ tools }) => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4">
+    <div className="site-container">
       {/* Large screens: Grid layout (3 cards first row, 2 cards second row) */}
       <div className="hidden lg:block">
         <div className="grid grid-cols-3 gap-6 mb-6">

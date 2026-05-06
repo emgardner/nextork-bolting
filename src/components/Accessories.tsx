@@ -323,7 +323,7 @@ const accessories: Accessory[] = [
 const Accessories: React.FC = () => {
   return (
     <section id="accessories" className="bg-white py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <div className="site-container">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.34em] text-sky-700">
             Accessories
