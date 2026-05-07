@@ -85,8 +85,8 @@ import VoltorkBrochure from '@/assets/brochure/Voltork_Brochure.pdf';
       </div>
       </div>
 
-      <div class="order-2 relative flex min-h-[20rem] items-center justify-center sm:min-h-[24rem] lg:min-h-[34rem] lg:justify-end">
-        <div class="relative h-full w-full overflow-hidden rounded-[2rem]">
+      <div class="hero-tablet-media order-2 relative flex min-h-[20rem] items-center justify-center sm:min-h-[24rem] lg:min-h-[34rem] lg:justify-end">
+        <div class="hero-tablet-video-frame relative h-full w-full overflow-hidden rounded-[2rem]">
           <video
             autoplay
             loop
@@ -102,3 +102,25 @@ import VoltorkBrochure from '@/assets/brochure/Voltork_Brochure.pdf';
     </div>
   </div>
 </section>
+
+<style>
+  @media (min-width: 700px) and (max-width: 900px) and (orientation: portrait) {
+    .hero-tablet-media {
+      min-height: 20rem;
+      justify-content: flex-end;
+    }
+
+    .hero-tablet-video-frame {
+      aspect-ratio: 16 / 10;
+      height: auto;
+      width: 70%;
+      margin-left: auto;
+      margin-bottom: 1rem;
+      margin-top: 1rem
+    }
+
+    .hero-tablet-video-frame video {
+      height: 100%;
+    }
+  }
+</style>
